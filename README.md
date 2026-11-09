@@ -64,6 +64,18 @@ Close the slicer first, copy the files, start it again. Existing files with the 
 * [docs/tpu-toolchange.md](docs/tpu-toolchange.md) - hotter clean + soak for TPU/FLEX tool changes in all three slicers (from a Prusa forum report, untested here)
 * [docs/changelog.md](docs/changelog.md) - what was done, in order
 
+## Credits
+
+* **Kiddocteur** - the hotter cleaning temperature and soak for TPU tool changes, from his
+  [Prusa forum report](https://forum.prusa3d.com/forum/prusa-indx-general-discussion-announcements-and-releases/solved-tpu-tangling-at-the-extruder-after-indx-tool-changes-the-nozzle-was-too-cold-during-cleaning/);
+  details in [docs/tpu-toolchange.md](docs/tpu-toolchange.md).
+* **[hyiger](https://forum.prusa3d.com/forum/profile/hyiger/)** - [A Mixed Nozzle Profile for the INDX](https://forum.prusa3d.com/forum/prusa-indx-general-discussion-announcements-and-releases/a-mixed-nozzle-profile-for-the-indx/) (Prusa forum, 25 Oct 2026) and his repository
+  [hyiger/prusaslicer-indx-profiles](https://github.com/hyiger/prusaslicer-indx-profiles) (AGPL-3.0): a published mixed-nozzle setup for the INDX
+  (0.25 mm in tool 1, HF0.4 in tools 2-8) in which PrusaSlicer filters each tool's filaments by that tool's nozzle. That observation is used in
+  [docs/hardware-and-nozzle-layout.md](docs/hardware-and-nozzle-layout.md) and the idea of one printer preset with different nozzles per tool is the same here, but the tool layout,
+  conditions and profiles in this repository were built separately and no files or settings were copied from his repository.
+  If a 0.25 + HF0.4 layout suits you better, use his.
+
 ## Licence
 
 Released under the **GNU Affero General Public License v3.0** - see [LICENSE](LICENSE). The presets are derived from the official

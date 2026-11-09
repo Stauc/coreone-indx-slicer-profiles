@@ -2,6 +2,10 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11 - credits
+
+* Added a Credits section to the README (Kiddocteur for the TPU tool-change fix, hyiger for the mixed-nozzle INDX profile that documents per-tool filament filtering).
+
 ## 2026-11 - TPU tool changes (untested)
 
 * The INDX printer presets of PrusaSlicer 2.x, PrusaSlicer 3 alpha and OrcaSlicer now use a hotter cleaning temperature (target - 25 C instead of

@@ -22,7 +22,7 @@ A second printer, a Mini IS, is outside the scope of this repository.
 * T8 filaments: `KW and ((nozzle_diameter[0]==1 and nozzle_high_flow[0]) or (nozzle_diameter[7]==1 and nozzle_high_flow[7]))`
 
 The OR form works whether PrusaSlicer evaluates the condition against the first extruder only or against each tool's own nozzle
-(a forum thread reports per-tool filtering; the 2.9.7 behaviour was not confirmed here).
+(hyiger reports in his [mixed-nozzle thread](https://forum.prusa3d.com/forum/prusa-indx-general-discussion-announcements-and-releases/a-mixed-nozzle-profile-for-the-indx/) that PrusaSlicer filters each tool's filament list by that tool's nozzle; the 2.9.7 behaviour was not confirmed here).
 PrusaSlicer 2.x user filament presets are full dumps of ~87 keys; `inherits` is informational, the condition decides visibility.
 
 ## OrcaSlicer
