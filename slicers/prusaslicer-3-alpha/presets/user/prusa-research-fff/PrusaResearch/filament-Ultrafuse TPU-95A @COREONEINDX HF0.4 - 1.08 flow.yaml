@@ -1,0 +1,39 @@
+kind: filament
+id: efebe021-27c6-4926-8e86-6437960b1aa4
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: QedS+KXrQFqq4eGdOolf2g
+  name: Ultrafuse TPU-95A @COREONEINDX HF0.4 - 1.08 flow
+  unconditional_inherits:
+  - iW1CxjPuRWC5e4bG7Sw+PQ
+  values:
+    extrusion_multiplier: 1.08
+    first_layer_temperature: 230
+    bed_temperature: 40
+    first_layer_bed_temperature: 40
+    filament_cost: 0.0
+    filament_density: 1.14
+    filament_colour: '#0035EC'
+    filament_vendor: Forward AM
+    filament_spool_weight: 0
+    filament_notes: 'Material Description
+
+      Ultrafuse® TPU 95A comes with a well-balanced profile of flexibility and durability. On top of that, it allows for easier and faster printing then softer TPU grades. Parts printed with Ultrafuse® TPU 95A show a high elongation, good impact resistance, excellent layer adhesion and a good resistance to oils and common industrially used chemicals. Due to its good printing behavior, Ultrafuse® TPU 95A is a good choice for starting printing flexible materials on both direct drive and bowden style printers.
+
+
+      Printing Recommendations:
+
+      Ultrafuse TPU can be printed directly onto a clean build plate. A small amount of 3Dlac can make removal easier after printing.'
+    min_fan_speed: 20
+    max_fan_speed: 75
+    bridge_fan_speed: 80
+    disable_fan_first_layers: 3
+    fan_below_layer_time: 30
+    enable_dynamic_fan_speeds: 0
+    cooling: true
+    full_fan_speed_layer: 0
+    retract_length: 3.0
+    retract_before_travel: 2
+  features:
+    based_id: iW1CxjPuRWC5e4bG7Sw+PQ
+    based_root_id: Prusament TPU 95A

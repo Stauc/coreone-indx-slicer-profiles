@@ -1,0 +1,62 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T HF 0.4 nozzle",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "default_filament_colour": [
+        "#A4A4A4"
+    ],
+    "filament_cost": [
+        "36.29"
+    ],
+    "filament_density": [
+        "1.24"
+    ],
+    "filament_flow_ratio": [
+        "0.98"
+    ],
+    "filament_max_volumetric_speed": [
+        "20"
+    ],
+    "filament_notes": [
+        "GeeeTech Matte PLA Grey 1.75 mm, 1 kg. Geeetech product page: nozzle 190-220 C, heated bed 50-70 C, +/-0.03 mm. Community database (Stone Grey): density 1.24, max flow 20 mm3/s, flow ratio 0.98, dry 45 C for 4 h."
+    ],
+    "filament_settings_id": [
+        "GeeeTech PLA Matte Grey @Prusa CORE One INDX"
+    ],
+    "filament_vendor": [
+        "GeeeTech"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "55"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "55"
+    ],
+    "inherits": "Prusament PLA @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "GeeeTech PLA Matte Grey @Prusa CORE One INDX",
+    "nozzle_temperature": [
+        "210"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "215"
+    ],
+    "nozzle_temperature_range_high": [
+        "220"
+    ],
+    "nozzle_temperature_range_low": [
+        "190"
+    ],
+    "textured_plate_temp": [
+        "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "55"
+    ],
+    "version": "2.3.1.0"
+}

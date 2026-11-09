@@ -1,0 +1,23 @@
+kind: filament
+id: 806cd585-0500-49ee-b441-4d442ba203ab
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: 2TNBq9unwpcnNT6N84pGeA
+  name: GeeeTech PETG @COREONEINDX HF0.4
+  unconditional_inherits:
+  - Pg/x3f1fSQGhLv63C+xlpw
+  values:
+    temperature: 245
+    first_layer_temperature: 250
+    extrusion_multiplier: 0.98
+    filament_max_volumetric_speed: 18
+    filament_cost: 10.49
+    filament_density: 1.27
+    filament_colour: '#E0E0E0'
+    filament_vendor: GeeeTech
+    filament_spool_weight: 193
+    pressure_advance_value: 0.055
+    filament_notes: 'GeeeTech PETG 1.75 mm, 1 kg, any colour; normal and fast printing (the clear/glass look is in GeeeTech PETG Transparent). Geeetech and 3DJake: nozzle 220-240 C, bed 80-90 C; density 1.27 (Open Filament Database). Tune: 245/250 C, flow 0.98 and spool 193 g from your GeeeTech tune, cap 18 mm3/s between Prusa Generic PETG INDX HF0.4 (240 C, 17) and Prusament PETG INDX (250 C, 20), fan 30-65 percent and retract 1.6 as Prusa INDX PETG, PA 0.055 between Prusa Generic (0.052) and Prusament (0.058). Raise the cap with a max-flow test.'
+  features:
+    based_id: Pg/x3f1fSQGhLv63C+xlpw
+    based_root_id: Prusament PETG

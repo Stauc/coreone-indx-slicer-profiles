@@ -1,0 +1,65 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T HF 0.4 nozzle",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "default_filament_colour": [
+        "#5B3FA0"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_cost": [
+        "14.49"
+    ],
+    "filament_density": [
+        "1.24"
+    ],
+    "filament_max_volumetric_speed": [
+        "35"
+    ],
+    "filament_notes": [
+        "GeeeTech Silk PLA TriColor Blue+Purple+Black for the 1.0 HF nozzle (T8). Max volumetric speed 35 mm3/s: the Max volumetric speed test (215 C, 1.0 HF) printed cleanly up to its top, ~40.8 mm3/s nominal, so 35 is a conservative cap. Other settings as the base TriColor preset."
+    ],
+    "filament_settings_id": [
+        "GeeeTech PLA TriColor Silk Blue+Purple+Black @Prusa CORE One INDX 1.0HF - T8"
+    ],
+    "filament_vendor": [
+        "GeeeTech"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "55"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "55"
+    ],
+    "inherits": "Generic PLA Silk @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "GeeeTech PLA TriColor Silk Blue+Purple+Black @Prusa CORE One INDX 1.0HF - T8",
+    "nozzle_temperature": [
+        "215"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "220"
+    ],
+    "nozzle_temperature_range_high": [
+        "230"
+    ],
+    "nozzle_temperature_range_low": [
+        "195"
+    ],
+    "pressure_advance": [
+        "0.009"
+    ],
+    "textured_plate_temp": [
+        "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "55"
+    ],
+    "version": "2.3.1.0"
+}

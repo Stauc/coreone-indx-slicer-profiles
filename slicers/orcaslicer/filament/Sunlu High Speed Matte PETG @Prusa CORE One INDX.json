@@ -1,0 +1,83 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T HF 0.4 nozzle",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "default_filament_colour": [
+        "#7A7A7A"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "25"
+    ],
+    "fan_max_speed": [
+        "70"
+    ],
+    "fan_min_speed": [
+        "40"
+    ],
+    "filament_cost": [
+        "14"
+    ],
+    "filament_density": [
+        "1.28"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "30"
+    ],
+    "filament_notes": [
+        "SUNLU High Speed Matte PETG 1.75 mm, 1 kg. SimplyPrint/Open Filament Database: nozzle 240-260 C, bed 70-80 C, density 1.28. printer-hub.ru: 240-250 C for 100-300 mm/s, 260-270 C above 300 mm/s, dry 65 C 6 h, not abrasive. Max-flow test on T1 (0.4 HF, 255 C, ramp up to 34.9 mm3/s): clean to the top, so cap 30 (about 85 percent of the tested top; the real limit is higher). 250/245 C because the spool lists 240-255 C for 100-300 mm/s and the print looked better at the fast end, so 255 C is hot for slow parts. PA 0.048 from the Sunlu PETG tune."
+    ],
+    "filament_settings_id": [
+        "Sunlu High Speed Matte PETG @Prusa CORE One INDX"
+    ],
+    "filament_vendor": [
+        "Sunlu"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "80"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "80"
+    ],
+    "inherits": "Prusament PETG @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "Sunlu High Speed Matte PETG @Prusa CORE One INDX",
+    "nozzle_temperature": [
+        "250"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "245"
+    ],
+    "nozzle_temperature_range_high": [
+        "260"
+    ],
+    "nozzle_temperature_range_low": [
+        "240"
+    ],
+    "overhang_fan_speed": [
+        "70"
+    ],
+    "pressure_advance": [
+        "0.048"
+    ],
+    "slow_down_layer_time": [
+        "9"
+    ],
+    "textured_plate_temp": [
+        "80"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "80"
+    ],
+    "version": "2.3.1.0"
+}

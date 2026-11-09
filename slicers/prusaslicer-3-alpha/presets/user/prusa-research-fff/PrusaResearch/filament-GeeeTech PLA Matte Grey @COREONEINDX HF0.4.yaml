@@ -1,0 +1,22 @@
+kind: filament
+id: d4d264fe-b352-4b50-a921-821dcad02e3f
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: rLolimiYLx5BYN6aJllBlg
+  name: GeeeTech PLA Matte Grey @COREONEINDX HF0.4
+  unconditional_inherits:
+  - h2BZOYfPRV2UKu1BEaGnPw
+  values:
+    temperature: 210
+    first_layer_temperature: 215
+    extrusion_multiplier: 0.98
+    filament_max_volumetric_speed: 20
+    filament_cost: 36.29
+    filament_density: 1.24
+    filament_colour: '#A4A4A4'
+    filament_vendor: GeeeTech
+    filament_spool_weight: 193
+    filament_notes: 'GeeeTech Matte PLA Grey 1.75 mm, 1 kg. Geeetech product page: nozzle 190-220 C, heated bed 50-70 C, +/-0.03 mm. Community database (Stone Grey): density 1.24, max flow 20 mm3/s, flow ratio 0.98, dry 45 C for 4 h.'
+  features:
+    based_id: h2BZOYfPRV2UKu1BEaGnPw
+    based_root_id: Prusament PLA

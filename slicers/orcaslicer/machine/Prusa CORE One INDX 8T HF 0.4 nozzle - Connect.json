@@ -1,0 +1,12 @@
+{
+    "from": "User",
+    "host_type": "prusaconnect",
+    "inherits": "Prusa CORE One INDX 8T HF 0.4 nozzle",
+    "is_custom_defined": "0",
+    "name": "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+    "print_host": "",
+    "print_host_webui": "",
+    "printer_settings_id": "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+    "printhost_apikey": "",
+    "version": "2.3.0.5"
+}

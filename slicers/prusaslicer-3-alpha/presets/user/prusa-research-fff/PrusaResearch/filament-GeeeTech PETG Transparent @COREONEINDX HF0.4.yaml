@@ -1,0 +1,27 @@
+kind: filament
+id: f9f183da-f1dd-4830-bb19-b0125eacae9a
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: De1KjOAK0gxXkse6V4K1bg
+  name: GeeeTech PETG Transparent @COREONEINDX HF0.4
+  unconditional_inherits:
+  - Pg/x3f1fSQGhLv63C+xlpw
+  values:
+    temperature: 235
+    first_layer_temperature: 240
+    extrusion_multiplier: 1
+    filament_max_volumetric_speed: 8
+    min_fan_speed: 0
+    max_fan_speed: 50
+    bridge_fan_speed: 100
+    fan_below_layer_time: 20
+    slowdown_below_layer_time: 6
+    filament_cost: 10.49
+    filament_density: 1.27
+    filament_colour: '#EAFBFF'
+    filament_vendor: GeeeTech
+    filament_spool_weight: 193
+    filament_notes: 'GeeeTech PETG Transparent 1.75 mm, 1 kg. Geeetech and 3DJake: nozzle 220-240 C, bed 80-90 C; density 1.27 (Open Filament Database). Tune: 235/240 C, flow 1.00, cap 8 mm3/s, fan 0 percent on layers over 20 s rising to 50 percent on short layers, bridges 100 percent, for clarity. Based on the ICE Rob clear tune (220 C, 7 mm3/s, no fan) and the GeeeTech white tune (flow 0.98, 10 mm3/s). Check flow and PA on a real print.'
+  features:
+    based_id: Pg/x3f1fSQGhLv63C+xlpw
+    based_root_id: Prusament PETG

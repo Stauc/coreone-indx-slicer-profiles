@@ -1,0 +1,42 @@
+{
+    "from": "User",
+    "host_type": "prusaconnect",
+    "inherits": "Prusa CORE One INDX 8T HF 0.4 nozzle",
+    "is_custom_defined": "0",
+    "max_layer_height": [
+        "0.3",
+        "0.3",
+        "0.3",
+        "0.3",
+        "0.3",
+        "0.3",
+        "0.15",
+        "0.75"
+    ],
+    "min_layer_height": [
+        "0.07",
+        "0.07",
+        "0.07",
+        "0.07",
+        "0.07",
+        "0.07",
+        "0.05",
+        "0.25"
+    ],
+    "name": "Prusa CORE One INDX 8T Mixed Nozzles - Connect",
+    "nozzle_diameter": [
+        "0.4",
+        "0.4",
+        "0.4",
+        "0.4",
+        "0.4",
+        "0.4",
+        "0.25",
+        "1"
+    ],
+    "print_host": "",
+    "print_host_webui": "",
+    "printer_settings_id": "Prusa CORE One INDX 8T Mixed Nozzles - Connect",
+    "printhost_apikey": "",
+    "version": "2.3.0.5"
+}

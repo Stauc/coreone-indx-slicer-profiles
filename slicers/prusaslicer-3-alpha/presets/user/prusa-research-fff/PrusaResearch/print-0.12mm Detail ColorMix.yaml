@@ -1,0 +1,16 @@
+kind: print
+id: 458d360a-6dc8-4fed-803d-34d787703570
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: +XuKwJMQdhHhCHjbFLe7hw
+  name: 0.12mm Detail ColorMix
+  unconditional_inherits:
+  - sp9t4qR5QSyyIBb4MUPsuw
+  values:
+    layer_height: 0.12
+    brim_type: outer_and_inner
+    brim_width: 5
+    default_tool_print: 0.12mm Detail ColorMix @COREONEINDX 0.4HF
+  features:
+    based_id: sp9t4qR5QSyyIBb4MUPsuw
+    based_root_id: 0VkSjedbRgyaEXK2ofKGmg

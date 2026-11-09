@@ -1,0 +1,83 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T HF 0.4 nozzle",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "default_filament_colour": [
+        "#E0E0E0"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "25"
+    ],
+    "fan_max_speed": [
+        "65"
+    ],
+    "fan_min_speed": [
+        "30"
+    ],
+    "filament_cost": [
+        "10.49"
+    ],
+    "filament_density": [
+        "1.27"
+    ],
+    "filament_flow_ratio": [
+        "0.98"
+    ],
+    "filament_max_volumetric_speed": [
+        "18"
+    ],
+    "filament_notes": [
+        "GeeeTech PETG 1.75 mm, 1 kg, any colour; normal and fast printing (the clear/glass look is in GeeeTech PETG Transparent). Geeetech and 3DJake: nozzle 220-240 C, bed 80-90 C; density 1.27 (Open Filament Database). Tune: 245/250 C, flow 0.98 and spool 193 g from your GeeeTech tune, cap 18 mm3/s between Prusa Generic PETG INDX HF0.4 (240 C, 17) and Prusament PETG INDX (250 C, 20), fan 30-65 percent and retract 1.6 as Prusa INDX PETG, PA 0.055 between Prusa Generic (0.052) and Prusament (0.058). Raise the cap with a max-flow test."
+    ],
+    "filament_settings_id": [
+        "GeeeTech PETG @Prusa CORE One INDX"
+    ],
+    "filament_vendor": [
+        "GeeeTech"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "90"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "85"
+    ],
+    "inherits": "Prusament PETG @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "GeeeTech PETG @Prusa CORE One INDX",
+    "nozzle_temperature": [
+        "245"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "250"
+    ],
+    "nozzle_temperature_range_low": [
+        "220"
+    ],
+    "overhang_fan_speed": [
+        "60"
+    ],
+    "pressure_advance": [
+        "0.055"
+    ],
+    "slow_down_layer_time": [
+        "9"
+    ],
+    "textured_plate_temp": [
+        "90"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "85"
+    ],
+    "version": "2.3.1.0"
+}

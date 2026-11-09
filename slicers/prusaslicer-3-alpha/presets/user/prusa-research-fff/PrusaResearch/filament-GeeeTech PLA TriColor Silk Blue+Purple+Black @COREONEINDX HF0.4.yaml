@@ -1,0 +1,26 @@
+kind: filament
+id: afa3d7dc-aec8-4ffd-8c6b-d50a94936fda
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: 82uO2TCNv5EXzpjCD6bBaQ
+  name: GeeeTech PLA TriColor Silk Blue+Purple+Black @COREONEINDX HF0.4
+  unconditional_inherits:
+  - h2BZOYfPRV2UKu1BEaGnPw
+  values:
+    temperature: 215
+    first_layer_temperature: 220
+    filament_max_volumetric_speed: 12.5
+    slowdown_below_layer_time: 12
+    pressure_advance_value: 0.025
+    filament_infill_max_crossing_speed: 120
+    cooling_slowdown_logic: consistent_surface
+    cooling_perimeter_transition_distance: 10
+    filament_cost: 14.49
+    filament_density: 1.24
+    filament_colour: '#5B3FA0'
+    filament_vendor: GeeeTech
+    filament_spool_weight: 193
+    filament_notes: 'GeeeTech Silk PLA TriColor Blue+Purple+Black, 1.75 mm, 1 kg, co-extruded. Printing temperature 195-230 C (as given by the owner; Geeetech publishes none). Heated bed 50-60 C and density 1.24 from community data for Geeetech silk PLA. Dimensional accuracy +/-0.03 mm. Base: Prusa silk PLA settings.'
+  features:
+    based_id: h2BZOYfPRV2UKu1BEaGnPw
+    based_root_id: Prusament PLA

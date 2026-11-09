@@ -1,0 +1,16 @@
+kind: tool_print
+id: 6bdc86db-989c-4b7f-98ec-4a85c7be8cd9
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow and (print.layer_height == 0.12))
+  id: Yl/XVmOxt11+juDdQlr6vQ
+  name: 0.12mm Detail ColorMix @COREONEINDX 0.4HF
+  unconditional_inherits:
+  - Hhus/D8wTPKSY9vp0xEuUQ
+  values:
+    fill_pattern: gyroid
+    fill_density: 10%
+    top_solid_layers: 6
+    bottom_solid_layers: 5
+  features:
+    based_id: Hhus/D8wTPKSY9vp0xEuUQ
+    based_root_id: tfGmkfdiQq++NX6mf8p4UQ

@@ -1,0 +1,26 @@
+kind: filament
+id: 1c29b60f-30c7-42a8-b577-ce4dbe338e62
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: YiN2/wFCSYiEpjXY3uc0sg
+  name: Prusament PETG @COREONEINDX HF0.4 - ICE Rob
+  unconditional_inherits:
+  - Pg/x3f1fSQGhLv63C+xlpw
+  values:
+    extrusion_multiplier: 1.05
+    temperature: 220
+    first_layer_temperature: 220
+    filament_max_volumetric_speed: 7
+    filament_cost: 36.29
+    filament_colour: '#EAFBFF'
+    filament_spool_weight: 201
+    min_fan_speed: 0
+    max_fan_speed: 100
+    bridge_fan_speed: 100
+    fan_below_layer_time: 0
+    slowdown_below_layer_time: 0
+    min_print_speed: 0
+    retract_before_wipe: 20%
+  features:
+    based_id: Pg/x3f1fSQGhLv63C+xlpw
+    based_root_id: Prusament PETG

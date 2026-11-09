@@ -1,0 +1,16 @@
+kind: tool_print
+id: be8b534f-31e6-4c21-a238-a5f43d0aa157
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow and (print.layer_height == 0.07))
+  id: LInJzhIvqNsy04EPeBaz3A
+  name: 0.07mm Extra Fine ColorMix @COREONEINDX 0.4HF
+  unconditional_inherits:
+  - 0.10mm Fine @COREONEINDX 0.4HF
+  values:
+    fill_pattern: gyroid
+    fill_density: 8%
+    top_solid_layers: 9
+    bottom_solid_layers: 7
+  features:
+    based_id: 0.10mm Fine @COREONEINDX 0.4HF
+    based_root_id: tfGmkfdiQq++NX6mf8p4UQ

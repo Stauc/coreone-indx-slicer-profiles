@@ -1,0 +1,2 @@
+# keep preset files byte-for-byte (PrusaSlicer .ini/.yaml use CRLF)
+* -text

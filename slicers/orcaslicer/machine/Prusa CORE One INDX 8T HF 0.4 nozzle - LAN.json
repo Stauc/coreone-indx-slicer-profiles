@@ -1,0 +1,12 @@
+{
+    "from": "User",
+    "inherits": "Prusa CORE One INDX 8T HF 0.4 nozzle",
+    "is_custom_defined": "0",
+    "name": "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+    "print_host": "",
+    "printer_settings_id": "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+    "printhost_authorization_type": "user",
+    "printhost_password": "",
+    "printhost_user": "",
+    "version": "2.3.0.5"
+}

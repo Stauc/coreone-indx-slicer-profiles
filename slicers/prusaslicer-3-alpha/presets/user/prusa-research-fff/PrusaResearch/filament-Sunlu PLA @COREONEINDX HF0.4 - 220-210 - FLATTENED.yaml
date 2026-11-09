@@ -1,0 +1,21 @@
+kind: filament
+id: 6cf78285-f963-4911-8ed1-d6f39e081722
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: ez/RYGYkQaONnpb5Gv2Wjw
+  name: Sunlu PLA @COREONEINDX HF0.4 - 220-210 - FLATTENED
+  unconditional_inherits:
+  - h2BZOYfPRV2UKu1BEaGnPw
+  values:
+    temperature: 210
+    first_layer_temperature: 220
+    filament_max_volumetric_speed: 20
+    filament_cost: 15.0
+    filament_density: 1.23
+    filament_vendor: Sunlu
+    filament_spool_weight: 162
+    min_fan_speed: 85
+    slowdown_below_layer_time: 8
+  features:
+    based_id: h2BZOYfPRV2UKu1BEaGnPw
+    based_root_id: Prusament PLA

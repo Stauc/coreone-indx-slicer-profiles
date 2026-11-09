@@ -1,0 +1,16 @@
+kind: filament
+id: 8d2214a7-8013-4812-b172-21f1f69f56c7
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: vkKvH63vTjuuGLxkO/prWw
+  name: Prusament PETG @COREONEINDX HF0.4 - GeeeTech
+  unconditional_inherits:
+  - Pg/x3f1fSQGhLv63C+xlpw
+  values:
+    extrusion_multiplier: 0.98
+    filament_max_volumetric_speed: 10
+    filament_spool_weight: 193
+    retract_before_wipe: 20%
+  features:
+    based_id: Pg/x3f1fSQGhLv63C+xlpw
+    based_root_id: Prusament PETG

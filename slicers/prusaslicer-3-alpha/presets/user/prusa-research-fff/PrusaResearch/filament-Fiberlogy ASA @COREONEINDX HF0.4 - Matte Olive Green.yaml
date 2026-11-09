@@ -1,0 +1,24 @@
+kind: filament
+id: bb5888f5-2a0c-4a48-961f-13c6c8d3b496
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: /g2V56rKS/q2huCDT+XKLQ
+  name: Fiberlogy ASA @COREONEINDX HF0.4 - Matte Olive Green
+  unconditional_inherits:
+  - w4E3zN0DRymVZJ3H/CLj1w
+  values:
+    filament_cost: 33.0
+    filament_colour: '#61634C'
+    filament_vendor: Fiberlogy
+    filament_spool_weight: 330
+    min_fan_speed: 15
+    max_fan_speed: 20
+    disable_fan_first_layers: 5
+    fan_below_layer_time: 30
+    slowdown_below_layer_time: 15
+    fan_always_on: false
+    enable_dynamic_fan_speeds: 0
+    full_fan_speed_layer: 0
+  features:
+    based_id: w4E3zN0DRymVZJ3H/CLj1w
+    based_root_id: Prusament ASA
