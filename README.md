@@ -61,7 +61,7 @@ Close the slicer first, copy the files, start it again. Existing files with the 
 * [docs/filaments.md](docs/filaments.md) - every filament profile with its main values and where they come from
 * [docs/flow-tests.md](docs/flow-tests.md) - max-flow tests, pitfalls, results
 * [docs/prusaslicer-3-alpha.md](docs/prusaslicer-3-alpha.md) - PS3 preset format notes and alpha 13 -> 14 comparison
-* [docs/tpu-toolchange.md](docs/tpu-toolchange.md) - FLEX-only hotter clean + soak for TPU tool changes (from a Prusa forum report, untested here)
+* [docs/tpu-toolchange.md](docs/tpu-toolchange.md) - hotter clean + soak for TPU/FLEX tool changes in all three slicers (from a Prusa forum report, untested here)
 * [docs/changelog.md](docs/changelog.md) - what was done, in order
 
 ## Licence

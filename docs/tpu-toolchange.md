@@ -1,12 +1,13 @@
 # TPU (FLEX) tool changes on the INDX
 
-The four PrusaSlicer 2.x INDX printer presets in this repository contain a FLEX-only change to the cleaning temperature and a short
-soak. It is based on a report by another INDX owner and is **not yet verified on this printer**.
+The INDX printer presets in this repository (PrusaSlicer 2.x, PrusaSlicer 3 alpha and OrcaSlicer) contain a change to the cleaning temperature
+and a short soak for flexible filaments (FLEX in PrusaSlicer, TPU in OrcaSlicer). It is based on a report by another INDX owner and is
+**not yet verified on this printer**.
 
 ## Source
 
 Kiddocteur, "[Solved] TPU tangling at the extruder after INDX tool changes: the nozzle was too cold during cleaning",
-Prusa forum, INDX general discussion, posted 07/11/2026 (the page does not say whether that is day/month or month/day; last edited about two days before 9 Nov 2026):
+Prusa forum, INDX general discussion, posted 07/11/2026 (7 November 2026):
 <https://forum.prusa3d.com/forum/prusa-indx-general-discussion-announcements-and-releases/solved-tpu-tangling-at-the-extruder-after-indx-tool-changes-the-nozzle-was-too-cold-during-cleaning/>
 
 Reported setup: Core One INDX, firmware 8.0.0, PrusaSlicer 2.9.6, Arianeplast TPU (Flexfill 92A based profile, FLEX, 225 C) printed together with PLA,
@@ -24,24 +25,35 @@ The stock presets contain exactly this logic (in `start_gcode` and `toolchange_g
 
 ## What was changed here
 
-Only for filaments with `filament_type = FLEX`:
+Only for flexible filaments (`filament_type` FLEX in PrusaSlicer, TPU in OrcaSlicer, which has no FLEX type):
 
-1. The cleaning temperature becomes `target - 25` instead of `target - 60` (195 C normal layers, 205 C first layer for these TPU profiles).
+1. The cleaning temperature becomes `target - 25` instead of `target - 60` (195 C normal layers, 205 C first layer for the TPU profiles here).
 2. An 8 s dwell (`G4 S8`) is added after the nozzle has reached the target temperature and before the deretract push, in the purge-station branch of
    the tool change and in the initial-tool sequence of the start G-code.
 
-Both edits are marked with a comment that names the source. Other filaments are not affected. The edit is scripted in
-[`scripts/apply_flex_toolchange.py`](../scripts/apply_flex_toolchange.py) (idempotent, keeps the CRLF line endings).
+Both edits carry a comment that names the source. Other filaments are not affected.
+
+| Slicer | Where | Notes |
+|---|---|---|
+| PrusaSlicer 2.x | `start_gcode` and `toolchange_gcode` of the four printer `.ini` presets | [`scripts/apply_flex_toolchange.py`](../scripts/apply_flex_toolchange.py) |
+| PrusaSlicer 3 alpha | `toolchange_gcode` of `printer-Prusa CORE One INDX + Wiper.yaml` | the start G-code is inherited from the vendor bundle and is **not** overridden, so the first-tool sequence at the start of a print stays stock |
+| OrcaSlicer | `change_filament_gcode` and `machine_start_gcode` of the four INDX machine presets | the system G-code was copied out of Orca's `Prusa` profile bundle (stamped 2.4.0.18), patched and stored as an override; filament type `TPU` |
+
+Scripts: [`apply_flex_toolchange.py`](../scripts/apply_flex_toolchange.py) (2.x) and
+[`apply_flex_toolchange_ps3_orca.py`](../scripts/apply_flex_toolchange_ps3_orca.py) (PS3 and Orca). Both are idempotent and keep the file formatting.
+
+Consequence for OrcaSlicer: because the two G-code blocks are now overrides, later changes to Orca's own INDX start / change-filament G-code will not reach
+those machine presets until the two keys are removed from the JSON.
 
 ## What was not changed
 
 The same post also lists other FLEX-only tweaks that were applied together and not tested separately: multitool ramming off, purge speed floor
 0.5 mm/s, deretract 0.8 mm/s, lock push at 1 mm/s, park retraction 2 mm. None of these are applied here (the TPU profiles still have multitool
-ramming on). The wipe-tower branch of the tool change (the thread used the purge station) and the PrusaSlicer 3 alpha printer preset, which contains the same stock
-logic, were not changed. OrcaSlicer machine presets inherit the system G-code and have no copy of it.
+ramming on). The wipe-tower branch of the tool change was not changed either (the thread used the purge station).
 
 ## How to check it
 
 Slice a small TPU + PLA print with several tool changes and look at the G-code: for the TPU tool the clean should read `M109 C195`
 (`M109 C205` on layer 1) and a `G4 S8` line should follow `M104 S220`. On the printer, watch for tangling at the extruder after the first return
-to the TPU tool and for how clean the nozzle is afterwards, since a hotter clean may ooze more. To go back, restore the printer `.ini` files from the previous commit.
+to the TPU tool and for how clean the nozzle is afterwards, since a hotter clean may ooze more. To go back, restore the printer files from the previous
+commit (Orca: delete the `machine_start_gcode` and `change_filament_gcode` keys from the machine JSON).
