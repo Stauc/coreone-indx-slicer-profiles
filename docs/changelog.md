@@ -2,6 +2,11 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11 - TPU tool changes (untested)
+
+* The four PrusaSlicer 2.x INDX printer presets now use a hotter cleaning temperature (target - 25 C instead of target - 60 C) and an 8 s soak for FLEX
+  filaments only, following a report by Kiddocteur on the Prusa forum. See [tpu-toolchange.md](tpu-toolchange.md) for the source and details.
+
 ## 2026-11 - publishing
 
 * Added the AGPL-3.0 licence (the presets derive from PrusaSlicer / OrcaSlicer presets, which are AGPL-3.0) and made the repository public.
