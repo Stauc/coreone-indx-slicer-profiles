@@ -10,6 +10,7 @@ variants:
     layer_height: 0.07
     brim_type: outer_and_inner
     brim_width: 5
+    skirts: 2
     default_tool_print: 0.07mm Extra Fine ColorMix @COREONEINDX 0.4HF
   features:
     based_id: Z0/g4p1mRzSbu/AYadbpqg

@@ -30,6 +30,7 @@
     "outer_wall_line_width": "0.25",
     "outer_wall_speed": "150",
     "print_settings_id": "0.10mm Fine @Prusa CORE One INDX 0.25 - T7",
+    "skirt_loops": "2",
     "small_perimeter_speed": "150",
     "solid_infill_filament": "7",
     "sparse_infill_acceleration": "3000",

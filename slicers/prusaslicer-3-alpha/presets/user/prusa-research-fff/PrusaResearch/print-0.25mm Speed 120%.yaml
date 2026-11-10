@@ -1,0 +1,15 @@
+kind: print
+id: e7ef792e-d0ae-4304-8df4-1486e73ae816
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: 5cYlKxtvtuJ71/ClH5S9XQ
+  name: 0.25mm Speed 120%
+  unconditional_inherits:
+  - bacaXZhyQAipHg6yVBNnaA
+  values:
+    layer_height: 0.25
+    skirts: 2
+    default_tool_print: 0.25mm Speed 120% @COREONEINDX 0.4HF
+  features:
+    based_id: bacaXZhyQAipHg6yVBNnaA
+    based_root_id: 0VkSjedbRgyaEXK2ofKGmg

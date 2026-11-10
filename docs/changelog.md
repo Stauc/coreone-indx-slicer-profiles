@@ -2,6 +2,13 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11-10 - Skirt and Speed 120 % profiles
+
+* All INDX print/process presets now print a **2-loop skirt** (nozzle clean-up before the part): `skirts = 2` in PrusaSlicer 2.x (ColorMix presets also `skirt_distance` 0 -> 6), `skirts: 2` in the PS3 alpha print presets, `skirt_loops` 2 in OrcaSlicer.
+* New **0.20mm Speed 120%** and **0.25mm Speed 120%** presets for the HF 0.4 tools in all three slicers: the stock Balanced / Draft speeds x 1.2 (same as the 120 % speed override on the printer panel), accelerations unchanged, Gyroid infill. PS3 has a `print` + `tool_print` pair for each.
+* The slicer still limits speed by each filament's max volumetric speed, so these presets only run faster where the filament cap allows it. Caps are not raised without a max-flow test.
+* **GeeeTech PETG** HF 0.4 cap 18 -> **22** mm3/s (prints well at 120 % on T1; no max-flow test yet).
+
 ## 2026-11 - credits
 
 * Added a Credits section to the README (Kiddocteur for the TPU tool-change fix, hyiger for the mixed-nozzle INDX profile that documents per-tool filament filtering).

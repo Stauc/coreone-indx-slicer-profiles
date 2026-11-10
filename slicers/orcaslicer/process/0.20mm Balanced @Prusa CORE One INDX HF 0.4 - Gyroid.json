@@ -1,15 +1,16 @@
 {
-	"from": "User",
-	"inherits": "0.20mm Balanced @Prusa CORE One INDX HF 0.4",
-	"name": "0.20mm Balanced @Prusa CORE One INDX HF 0.4 - Gyroid",
-	"print_extruder_id": [
-		"1"
-	],
-	"print_extruder_variant": [
-		"Direct Drive Standard"
-	],
-	"print_settings_id": "0.20mm Balanced @Prusa CORE One INDX HF 0.4 - Gyroid",
-	"sparse_infill_density": "10%",
-	"sparse_infill_pattern": "gyroid",
-	"version": "2.4.0.18"
+    "from": "User",
+    "inherits": "0.20mm Balanced @Prusa CORE One INDX HF 0.4",
+    "name": "0.20mm Balanced @Prusa CORE One INDX HF 0.4 - Gyroid",
+    "print_extruder_id": [
+        "1"
+    ],
+    "print_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "print_settings_id": "0.20mm Balanced @Prusa CORE One INDX HF 0.4 - Gyroid",
+    "skirt_loops": "2",
+    "sparse_infill_density": "10%",
+    "sparse_infill_pattern": "gyroid",
+    "version": "2.4.0.18"
 }

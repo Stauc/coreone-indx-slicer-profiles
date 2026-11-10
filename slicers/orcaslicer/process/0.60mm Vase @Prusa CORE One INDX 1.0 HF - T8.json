@@ -31,6 +31,7 @@
     "outer_wall_line_width": "1.1",
     "outer_wall_speed": "100",
     "print_settings_id": "0.60mm Vase @Prusa CORE One INDX 1.0 HF - T8",
+    "skirt_loops": "2",
     "small_perimeter_speed": "100",
     "solid_infill_filament": "8",
     "sparse_infill_acceleration": "3000",

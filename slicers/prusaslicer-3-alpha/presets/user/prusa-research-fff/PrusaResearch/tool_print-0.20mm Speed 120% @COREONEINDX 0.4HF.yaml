@@ -1,0 +1,26 @@
+kind: tool_print
+id: 48596e27-5037-427f-8f03-5513994d380b
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow and (print.layer_height == 0.2))
+  id: eNER2XNWRMupkLfHcaPtVg
+  name: 0.20mm Speed 120% @COREONEINDX 0.4HF
+  unconditional_inherits:
+  - QKick2AmQsC5h0VCiG4Cew
+  values:
+    perimeter_speed: 300
+    external_perimeter_speed: 240
+    small_perimeter_speed: 204
+    infill_speed: 360
+    solid_infill_speed: 300
+    top_solid_infill_speed: 120
+    gap_fill_speed: 144
+    bridge_speed: 60
+    support_material_speed: 144
+    first_layer_speed: 54
+    first_layer_solid_infill_speed: 120
+    first_layer_speed_over_raft: 36
+    max_print_speed: 360
+    fill_pattern: gyroid
+  features:
+    based_id: QKick2AmQsC5h0VCiG4Cew
+    based_root_id: tfGmkfdiQq++NX6mf8p4UQ

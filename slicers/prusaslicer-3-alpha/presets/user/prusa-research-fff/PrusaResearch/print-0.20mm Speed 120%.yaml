@@ -1,0 +1,15 @@
+kind: print
+id: 35ab9b0b-8a1d-4e94-bb3a-c01231c74c4d
+variants:
+- condition: ((printer.base_model == "COREONE_INDX") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: I1ydH279UUFYwbwxgF9Djw
+  name: 0.20mm Speed 120%
+  unconditional_inherits:
+  - keQU5JiMTF6bCkJEhO74FQ
+  values:
+    layer_height: 0.2
+    skirts: 2
+    default_tool_print: 0.20mm Speed 120% @COREONEINDX 0.4HF
+  features:
+    based_id: keQU5JiMTF6bCkJEhO74FQ
+    based_root_id: 0VkSjedbRgyaEXK2ofKGmg

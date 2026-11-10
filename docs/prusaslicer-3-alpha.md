@@ -23,7 +23,7 @@ Written against alpha 13 and alpha 14 on Windows. The format is unstable; expect
 
 ## Coverage
 
-Only the **T1-T5 HF 0.4** profiles are provided for PS3 (filaments, the ColorMix print/tool_print presets and the `+ Wiper` printer).
+Only the **T1-T5 HF 0.4** profiles are provided for PS3 (filaments, the ColorMix and Speed 120% print/tool_print presets and the `+ Wiper` printer).
 There are no T6, T7 or T8 filaments for PS3 yet.
 
 ## Alpha 13 -> 14

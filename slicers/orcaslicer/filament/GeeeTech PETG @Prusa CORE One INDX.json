@@ -31,10 +31,10 @@
         "0.98"
     ],
     "filament_max_volumetric_speed": [
-        "18"
+        "22"
     ],
     "filament_notes": [
-        "GeeeTech PETG 1.75 mm, 1 kg, any colour; normal and fast printing (the clear/glass look is in GeeeTech PETG Transparent). Geeetech and 3DJake: nozzle 220-240 C, bed 80-90 C; density 1.27 (Open Filament Database). Tune: 245/250 C, flow 0.98 and spool 193 g from your GeeeTech tune, cap 18 mm3/s between Prusa Generic PETG INDX HF0.4 (240 C, 17) and Prusament PETG INDX (250 C, 20), fan 30-65 percent and retract 1.6 as Prusa INDX PETG, PA 0.055 between Prusa Generic (0.052) and Prusament (0.058). Raise the cap with a max-flow test."
+        "GeeeTech PETG 1.75 mm, 1 kg, any colour; normal and fast printing (the clear/glass look is in GeeeTech PETG Transparent). Geeetech and 3DJake: nozzle 220-240 C, bed 80-90 C; density 1.27 (Open Filament Database). Tune: 245/250 C, flow 0.98 and spool 193 g from your GeeeTech tune, cap 22 mm3/s (was 18; raised 10 Nov 2026 after printing well at 120 percent speed on T1), between Prusa Generic PETG INDX HF0.4 (240 C, 17) and Prusament PETG INDX (250 C, 20), fan 30-65 percent and retract 1.6 as Prusa INDX PETG, PA 0.055 between Prusa Generic (0.052) and Prusament (0.058). Raise the cap with a max-flow test."
     ],
     "filament_settings_id": [
         "GeeeTech PETG @Prusa CORE One INDX"
