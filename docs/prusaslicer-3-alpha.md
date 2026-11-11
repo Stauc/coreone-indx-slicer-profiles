@@ -90,6 +90,35 @@ The wall and bridge differences are probably the newer slicing engine (wall widt
 the same widths and speeds are set in both. The idle temperature comes from Prusa's stock start G-code, which differs between the 2.5.15 and 1.0.23
 profile sets.
 
+### How the two prints came out
+
+Both files were printed. The PrusaSlicer 3 part fitted its mating hole easily; the 2.9 part was a hard fit. The files explain it: on a small tube
+(about 4.3 mm outside diameter, wall a little over 1.1 mm) the two slicers split the wall differently with identical settings (3 perimeters, 0.45 mm).
+
+| On that tube | 2.9 | 3 alpha 14 |
+|---|---|---|
+| Wall built from | three beads, 0.45 / about 0.29 / 0.45 mm | two beads of 0.57 mm |
+| Nominal outside diameter | 4.29 mm | 4.28 mm |
+| Plastic per layer | 2.24 mm3 | 2.24 mm3 |
+
+Same target size and the same amount of plastic, but three squeezed passes of a soft material seem to push the outer surface out, where two
+full-width passes stay put. The "6 % more plastic per mm" in the outer wall above is this section (wider outer beads, no middle bead), not extra
+flow. Everywhere else the two toolpaths agree to about a thousandth of a millimetre. Setting 2 perimeters in 2.9 for such a part should give the
+same split; that was not sliced to confirm.
+
+### Opening a PrusaSlicer 2.9 project crashes alpha 14
+
+Opening a 2.9 `.3mf` saved with mixed nozzles (0.4 HF, 0.4, 0.25, 1.0 HF) closes the slicer. The log shows
+`Assertion failed at HwConfig.cpp:282 ... suggest_name(...)` with `tool => nullptr`: the project's printer model `COREONE_INDX8T` is matched to a
+printer definition that has no tool for one of the nozzles. Import the STL files instead and set tool, filament and preset in PrusaSlicer 3.
+It is not known whether this also happens without the mixed-nozzle preset source installed, since that source reports the same model name.
+
+### Calibration tools
+
+Alpha 14 ships a built-in Lua plugin "Calibration patterns" (`resources/lua/com.prusa3d.slicer.calibration`) with a **Flow Tower** (minimum and
+maximum volumetric flow, number of steps) and a **Temperature Tower**, both in the Calibration menu. Third-party plugin collections exist as well
+(for example leotrax3d's unofficial plugins with a fan tower, speed tower and tolerance test); none of them has been tried here.
+
 ### Not checked
 
 * Whether the cold-sheet start G-code keeps the bed off on a real print.

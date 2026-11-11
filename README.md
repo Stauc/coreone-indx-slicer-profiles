@@ -7,6 +7,7 @@ used to generate and verify them.
 > Status: personal working set, tuned on one printer with the spools listed in [docs/filaments.md](docs/filaments.md).
 > Values marked "estimate" in the docs have not been printed yet. Treat everything as a starting point and run your own first-layer,
 > flow and pressure-advance checks. Not affiliated with or endorsed by Prusa Research, Sunlu, Geeetech or Ultrafuse.
+> Day to day the author now slices with the PrusaSlicer 3 alpha (mixed-nozzle preset source) and uses OrcaSlicer for tuning; the PrusaSlicer 2.x presets are the tested base the other two are derived from.
 
 ## Hardware this is written for
 

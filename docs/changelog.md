@@ -4,6 +4,7 @@ Newest first. Dates are the working dates of the session in which each change wa
 
 ## 2026-11-11 - PrusaSlicer 3 mixed nozzles, T6/T7 filaments, TPU
 
+* The TPU part sliced by **PrusaSlicer 3 printed with a better fit** than the PrusaSlicer 2.x one; the cause is how each slicer splits a thin wall into beads, see [prusaslicer-3-alpha.md](prusaslicer-3-alpha.md). Also noted there: alpha 14 crashes when opening a 2.x project with mixed nozzles, and its built-in flow and temperature towers.
 * **Infill default 10 % gyroid** everywhere: nine PrusaSlicer 2.x print presets changed (T7 and T6 White from 15 % grid; Speed 120% and T6 TPU from 15 %; T6 CF from 20 %; 0.07 ColorMix from 8 %), and it is the printer default in the PrusaSlicer 3 bundle (1.0.9). OrcaSlicer already had it.
 * **OrcaSlicer Ultrafuse TPU**: the filament start G-code came from the Nextruder TPU profile (`M900 K0`, heatbreak temperature) and never set the reduced extruder current. It now sends `M572 S0` and `M906 P2` like PrusaSlicer 2.x and 3.
 * The Ultrafuse TPU T6 profile printed well from PrusaSlicer 2.x. The PrusaSlicer 3 G-code for the same part matches it ([comparison](prusaslicer-3-alpha.md#prusaslicer-3-alpha-14-compared-with-prusaslicer-29-observed-10-11-nov-2026)); the OrcaSlicer one has not been re-sliced since the fix.
