@@ -19,7 +19,8 @@ Values are read from the PrusaSlicer 2.x files in `slicers/prusaslicer-2.x/filam
 | Prusament PC Blend Carbon Fiber @COREONEINDX Std0.4 - T6 | T6 0.4 std | PC | 285/285 | 115/110 | 9 | 0.05 | 15-30 | Prusament PC Blend Carbon Fiber for the standard 0.4 mm nozzle on T6 of the mixed-nozzle INDX printers. Prusa INDX HF0.4 preset with the standard-nozz... |
 | Prusament PETG @COREONEINDX HF0.4 - GeeeTech | T1-T5 0.4 HF | PETG | 250/255 | 90/85 | 10 | 0.058 | 30-65 | - |
 | Prusament PETG @COREONEINDX HF0.4 - ICE Rob | T1-T5 0.4 HF | PETG | 220/220 | 90/85 | 7 | 0.058 | 0-100 | - |
-| Prusament PLA @COREONEINDX 0.25 - T7 | T7 0.25 | PLA | 225/230 | 60/60 | 10 | 0.1 | 85-100 | Prusament PLA for the 0.25 mm nozzle on T7 of the mixed-nozzle INDX printers. Values follow Prusa 0.25 INDX PLA: 10 mm3/s max, pressure advance 0.1, f... |
+| Prusament PETG @COREONEINDX 0.25 - T7 | T7 0.25 | PETG | 245/250 | 90/85 | 8 | 0.17 | 30-60 | Prusa's own Prusament PETG @COREONEINDX 0.25 (profiles 2.5.15). Not test-printed here. |
+| Prusament PLA @COREONEINDX 0.25 - T7 | T7 0.25 | PLA | 220/230 | 60/60 | 10 | 0.13 | 85-100 | Prusament PLA for the 0.25 mm nozzle on T7 of the mixed-nozzle INDX printers. Values follow Prusa 0.25 INDX PLA: 10 mm3/s max, pressure advance 0.1, f... |
 | Prusament PLA @COREONEINDX 1.0HF - T8 | T8 1.0 HF | PLA | 225/230 | 60/60 | 35 | 0.013 | 85-100 | Prusament PLA for the 1.0 mm high-flow nozzle on T8 of the mixed-nozzle INDX printers. Prusa has no 1.0 profile; temperatures and flow are the HF 0.4 ... |
 | Prusament PLA @COREONEINDX HF0.4 - Color | T1-T5 0.4 HF | PLA | 225/230 | 60/60 | 28 | 0.038 | 100-100 | - |
 | Prusament PLA @COREONEINDX HF0.4 - GECO | T1-T5 0.4 HF | PLA | 225/230 | 0/0 | 28 | 0.038 | 100-100 | - |
@@ -47,13 +48,16 @@ Values are read from the PrusaSlicer 2.x files in `slicers/prusaslicer-2.x/filam
 | Sunlu PLA @COREONEINDX HF0.4 - FLATTENED | T1-T5 0.4 HF | PLA | 220/230 | 60/60 | 20 | 0.031 | 85-100 | - |
 | Sunlu PLA White @COREONEINDX Std0.4 - T6 | T6 0.4 std | PLA | 205/210 | 60/60 | 12 | 0.038 | 100-100 | Sunlu PLA White for the standard 0.4 mm nozzle on T6 of the mixed-nozzle INDX printers. Temperatures, flow limit and fan taken from your Sunlu PLA Whi... |
 | Sunlu PLA+ 2.0 @COREONEINDX HF0.4 - FLATTENED | T1-T5 0.4 HF | PLA | 220/230 | 60/60 | 25 | 0.031 | 85-100 | - |
-| Ultrafuse TPU-95A @COREONEINDX HF0.4 - 1.06 flow | T1-T5 0.4 HF | FLEX | 220/230 | 40/40 | 2 | 0 | 20-75 | Material Description\nUltrafuse® TPU 95A comes with a well-balanced profile of flexibility and durability. On top of that, it allows for easier and fa... |
-| Ultrafuse TPU-95A @COREONEINDX HF0.4 - 1.08 flow | T1-T5 0.4 HF | FLEX | 220/230 | 40/40 | 2 | 0 | 20-75 | Material Description\nUltrafuse® TPU 95A comes with a well-balanced profile of flexibility and durability. On top of that, it allows for easier and fa... |
+| Ultrafuse TPU-95A @COREONEINDX HF0.4 - 1.06 flow | T1-T5 0.4 HF | FLEX | 225/230 | 40/40 | 2 | 0 | 20-100 | Material Description\nUltrafuse® TPU 95A comes with a well-balanced profile of flexibility and durability. On top of that, it allows for easier and fa... |
+| Ultrafuse TPU-95A @COREONEINDX HF0.4 - 1.08 flow | T1-T5 0.4 HF | FLEX | 225/230 | 40/40 | 2 | 0 | 20-100 | Material Description\nUltrafuse® TPU 95A comes with a well-balanced profile of flexibility and durability. On top of that, it allows for easier and fa... |
+| Ultrafuse TPU-95A @COREONEINDX Std0.4 - T6 | T6 0.4 std | FLEX | 225/230 | 40/40 | 2 | 0 | 20-100 | Same values as the HF 0.4 profiles, flow 1.06. |
 
 ## How the numbers were chosen
 
 * **Baseline** - Prusa's own CORE One INDX presets (`Prusament PETG/PLA @COREONEINDX HF0.4`, ...), the closest official presets for each material.
 * **Third-party spools** (Sunlu, Geeetech, Ultrafuse, Fiberlogy) - manufacturer ranges and community databases (SimplyPrint / Open Filament Database, retailer pages), cross-checked against the author's own prints. Pages that could not be read are not used.
+* **Ultrafuse TPU 95A** - temperatures (225 C, 230 first layer), bed 40 C and cooling (fan 20-100 % automatic, off for 3 layers) follow BASF's own Prusa profile for this filament (MK4 IS v1.1, 2024) and its data sheet. Retract 1.5 mm and the 2 mm3/s cap follow Prusa's INDX TPU profile (Prusament TPU 95A @COREONEINDX HF0.4), because BASF's 3 mm retract is for the Nextruder. Flow 1.06 / 1.08 are the author's own tunes.
+* **T7 (0.25) Prusament PLA and PETG** - Prusa's values for the INDX 0.25 nozzle from profiles 2.5.15 (PLA 220/230 C, cap 10, PA 0.13; PETG 245/250 C, cap 8, PA 0.17).
 * **T6 / T8 / T7** - Prusa has no INDX presets for these nozzles; values are derived from Prusa's CORE One presets for similar nozzle sizes (see [hardware-and-nozzle-layout.md](hardware-and-nozzle-layout.md) for the pressure-advance scaling).
 * **Flow caps** - where a flow test exists it is in [flow-tests.md](flow-tests.md); the other caps are Prusa defaults or estimates. The T8 PETG caps (GeeeTech 25, Transparent 10, Sunlu 30) have not been tested.
 * **GeeeTech PETG Transparent** is the slow, glass-clear tune (235/240 C, cap 8, fan mostly off); **GeeeTech PETG** is the normal/fast one for any colour (245/250 C, cap 22, flow 0.98). The cap was 18 until 10 Nov 2026; it was raised because the spool prints well at 120 % speed on T1 (18 x 1.2 = 21.6), not after a max-flow test.

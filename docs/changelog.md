@@ -2,6 +2,14 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11-11 - PrusaSlicer 3 mixed nozzles, T6/T7 filaments, TPU
+
+* **PrusaSlicer 3 alpha 14: mixed-nozzle INDX printer** as a separate preset source (0.4 HF, 0.4 standard, 0.25 and 1.0 HF tools on one printer), generated from Prusa's FFF profiles 1.0.23. See [prusaslicer-3-mixed-nozzles.md](prusaslicer-3-mixed-nozzles.md). Idea from ltlowe's Multi-Size Core One INDX bundle.
+* New filaments in all three slicers: **Ultrafuse TPU 95A for T6** (standard 0.4), **Prusament PETG for T7** (0.25). T7 Prusament PLA moved to Prusa's 2.5.15 values (220 C, PA 0.13).
+* **Ultrafuse TPU 95A** (all variants): 225 C / 230 first layer, bed 40, fan 20-100 % automatic from BASF's Prusa profile; retract 3 -> 1.5 mm from Prusa's INDX TPU profile.
+* **OrcaSlicer Mixed Nozzles machines**: the start G-code declared every tool as high-flow in the nozzle check (`M862.1 ... F1`); T6 and T7 now report `F0`.
+* Sliced and compared one TPU part on T6 in all three slicers: each G-code selects tool 6 throughout. PrusaSlicer 3 lacked the TPU hotter clean + soak for the *first* tool; it is now in the mixed bundle's start G-code.
+
 ## 2026-11-10 - Skirt and Speed 120 % profiles
 
 * All INDX print/process presets now print a **2-loop skirt** (nozzle clean-up before the part): `skirts = 2` in PrusaSlicer 2.x (ColorMix presets also `skirt_distance` 0 -> 6), `skirts: 2` in the PS3 alpha print presets, `skirt_loops` 2 in OrcaSlicer.

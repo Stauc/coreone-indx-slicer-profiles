@@ -1,0 +1,35 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "10"
+    ],
+    "filament_notes": [
+        "Prusament PLA for the 0.25 mm nozzle on T7. Prusa's values for the INDX 0.25 nozzle (profiles 2.5.15): 220/230 C, cap 10 mm3/s, pressure advance 0.13, retract 0.8. Select it for T7 only."
+    ],
+    "filament_retraction_length": [
+        "0.8"
+    ],
+    "filament_settings_id": [
+        "Prusament PLA @Prusa CORE One INDX 0.25 - T7"
+    ],
+    "from": "User",
+    "inherits": "Prusament PLA @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "Prusament PLA @Prusa CORE One INDX 0.25 - T7",
+    "nozzle_temperature": [
+        "220"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "230"
+    ],
+    "pressure_advance": [
+        "0.13"
+    ],
+    "version": "2.3.1.0"
+}

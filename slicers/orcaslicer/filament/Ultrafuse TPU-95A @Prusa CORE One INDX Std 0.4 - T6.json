@@ -1,0 +1,95 @@
+{
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T HF 0.4 nozzle",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "default_filament_colour": [
+        "#0035EC"
+    ],
+    "fan_cooling_layer_time": [
+        "30"
+    ],
+    "fan_max_speed": [
+        "100"
+    ],
+    "fan_min_speed": [
+        "20"
+    ],
+    "filament_cost": [
+        "0"
+    ],
+    "filament_density": [
+        "1.14"
+    ],
+    "filament_deretraction_speed": [
+        "20"
+    ],
+    "filament_flow_ratio": [
+        "1.06"
+    ],
+    "filament_max_volumetric_speed": [
+        "2"
+    ],
+    "filament_notes": [
+        "Ultrafuse TPU 95A for the standard 0.4 mm nozzle on T6. Temperatures, bed and cooling from BASF's own Prusa profile (MK4 IS v1.1, 2024): 225 C (230 first layer), bed 40, fan 20-100 percent automatic. Retract 1.5 and cap 2 mm3/s from Prusa's INDX TPU profile, flow 1.06 from the HF 0.4 tune. Select it for T6 only."
+    ],
+    "filament_retraction_length": [
+        "1.5"
+    ],
+    "filament_retraction_speed": [
+        "60"
+    ],
+    "filament_settings_id": [
+        "Ultrafuse TPU-95A @Prusa CORE One INDX Std 0.4 - T6"
+    ],
+    "filament_type": [
+        "TPU"
+    ],
+    "filament_vendor": [
+        "Forward AM"
+    ],
+    "from": "User",
+    "full_fan_speed_layer": [
+        "0"
+    ],
+    "hot_plate_temp": [
+        "40"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "40"
+    ],
+    "inherits": "Generic TPU @Prusa CORE One",
+    "is_custom_defined": "0",
+    "name": "Ultrafuse TPU-95A @Prusa CORE One INDX Std 0.4 - T6",
+    "nozzle_temperature": [
+        "225"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "230"
+    ],
+    "overhang_fan_speed": [
+        "80"
+    ],
+    "slow_down_for_layer_cooling": [
+        "1"
+    ],
+    "slow_down_layer_time": [
+        "15"
+    ],
+    "slow_down_min_speed": [
+        "15"
+    ],
+    "textured_plate_temp": [
+        "40"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "40"
+    ],
+    "version": "2.3.1.0"
+}

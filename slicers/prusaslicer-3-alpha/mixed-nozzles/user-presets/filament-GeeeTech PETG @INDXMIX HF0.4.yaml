@@ -1,0 +1,73 @@
+kind: filament
+id: 17639983-21db-4405-918c-a4e04748bb53
+variants:
+- condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
+  id: J0BeI2lMmNI3eMiUlTjOvA
+  name: "GeeeTech PETG @INDXMIX HF0.4"
+  unconditional_inherits:
+  - SXM_72AAB98F7F16AB008317
+  values:
+    bed_temperature: 90
+    bridge_fan_speed: 60
+    chamber_minimal_temperature: 0
+    chamber_temperature: 35
+    cooling: 1
+    cooling_perimeter_transition_distance: 15
+    cooling_slowdown_logic: "consistent_surface"
+    disable_fan_first_layers: 3
+    enable_dynamic_fan_speeds: 1
+    end_filament_gcode: "; Filament-specific end gcode"
+    extrusion_multiplier: 0.98
+    fan_always_on: 1
+    fan_below_layer_time: 25
+    filament_abrasive: 0
+    filament_colour: "#E0E0E0"
+    filament_cooling_final_speed: 0
+    filament_cooling_initial_speed: 0
+    filament_cooling_moves: 0
+    filament_cost: 10.49
+    filament_density: 1.27
+    filament_diameter: 1.75
+    filament_flush_speed: 0
+    filament_flush_volume: 0
+    filament_infill_max_crossing_speed: 110
+    filament_infill_max_speed: 200
+    filament_loading_speed: 0
+    filament_loading_speed_start: 0
+    filament_max_volumetric_speed: 22
+    filament_minimal_purge_on_wipe_tower: 10
+    filament_multitool_ramming: 1
+    filament_multitool_ramming_flow: 30
+    filament_multitool_ramming_volume: 18
+    filament_notes: "GeeeTech PETG 1.75 mm, 1 kg, any colour; normal and fast printing (the clear/glass look is in GeeeTech PETG Transparent). Geeetech and 3DJake: nozzle 220-240 C, bed 80-90 C; density 1.27 (Open Filament Database). Tune: 245/250 C, flow 0.98 and spool 193 g from your GeeeTech tune, cap 22 mm3/s (was 18; raised 10 Nov 2026 after printing well at 120 percent speed on T1), between Prusa Generic PETG INDX HF0.4 (240 C, 17) and Prusament PETG INDX (250 C, 20), fan 30-65 percent and retract 1.6 as Prusa INDX PETG, PA 0.055 between Prusa Generic (0.052) and Prusament (0.058). Raise the cap with a max-flow test."
+    filament_purge_multiplier: "100%"
+    filament_ramming_parameters: "250 100 42.4194 42.4194| 0.05 42.4387 0.45 42.4387 0.95 42.4387 1.45 42.4387 1.95 42.4387 2.45 42.4387 2.95 42.4387 3.45 42.4387 3.95 42.4387 4.45 42.4387 4.95 42.4387"
+    retract_length: 1.6
+    retract_length_toolchange: 1.6
+    filament_shrinkage_compensation_xy: "0%"
+    filament_shrinkage_compensation_z: "0%"
+    filament_soluble: 0
+    filament_spool_weight: 193
+    filament_stamping_distance: 0
+    filament_stamping_loading_speed: 0
+    filament_toolchange_delay: 0
+    filament_type: "PETG"
+    filament_unloading_speed: 0
+    filament_unloading_speed_start: 0
+    filament_vendor: "GeeeTech"
+    first_layer_bed_temperature: 85
+    first_layer_temperature: 250
+    full_fan_speed_layer: 5
+    max_fan_speed: 65
+    min_fan_speed: 30
+    min_print_speed: 20
+    overhang_fan_speed_0: 60
+    overhang_fan_speed_1: 60
+    overhang_fan_speed_2: 40
+    overhang_fan_speed_3: 0
+    slowdown_below_layer_time: 9
+    temperature: 245
+    pressure_advance_value: 0.055
+  features:
+    based_id: SXM_72AAB98F7F16AB008317
+    based_root_id: SXM_C259499148CD6EF50FD9

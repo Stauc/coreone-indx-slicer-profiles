@@ -1,0 +1,72 @@
+kind: filament
+id: 987001de-6725-417f-85d4-c80119e050a9
+variants:
+- condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
+  id: wr5Py9pMLvSaNDBXN/Q+iQ
+  name: "Prusament PC Blend Carbon Fiber @INDXMIX 1.0HF - T8"
+  unconditional_inherits:
+  - SXM_FF36F1936C4E41D75F54
+  values:
+    bed_temperature: 115
+    bridge_fan_speed: 30
+    chamber_minimal_temperature: 40
+    chamber_temperature: 55
+    cooling: 1
+    cooling_perimeter_transition_distance: 10
+    cooling_slowdown_logic: "consistent_surface"
+    disable_fan_first_layers: 4
+    enable_dynamic_fan_speeds: 1
+    end_filament_gcode: "; Filament-specific end gcode"
+    extrusion_multiplier: 1.03
+    fan_always_on: 0
+    fan_below_layer_time: 15
+    filament_abrasive: 1
+    filament_colour: "#BBBBBB"
+    filament_cooling_final_speed: 0
+    filament_cooling_initial_speed: 0
+    filament_cooling_moves: 0
+    filament_cost: 74.99
+    filament_density: 1.22
+    filament_diameter: 1.75
+    filament_flush_speed: 0
+    filament_flush_volume: 0
+    filament_infill_max_crossing_speed: 100
+    filament_infill_max_speed: 0
+    filament_loading_speed: 0
+    filament_loading_speed_start: 0
+    filament_max_volumetric_speed: 18
+    filament_minimal_purge_on_wipe_tower: 18
+    filament_multitool_ramming: 1
+    filament_multitool_ramming_flow: 30
+    filament_multitool_ramming_volume: 18
+    filament_notes: "Prusament PC Blend Carbon Fiber for the 1.0 mm high-flow nozzle on T8 of the mixed-nozzle INDX printers. Prusa has no 1.0 profile: INDX HF0.4 preset with the numbers of the CORE One 0.8 preset (285 C, 18 mm3/s); pressure advance 0.011 (trend of Prusa 0.4/0.6/0.8 values). Untested. Abrasive: needs a hardened nozzle on T8."
+    filament_purge_multiplier: "100%"
+    filament_ramming_parameters: "250 100 42.4194 42.4194| 0.05 42.4387 0.45 42.4387 0.95 42.4387 1.45 42.4387 1.95 42.4387 2.45 42.4387 2.95 42.4387 3.45 42.4387 3.95 42.4387 4.45 42.4387 4.95 42.4387"
+    retract_length_toolchange: 0.8
+    filament_shrinkage_compensation_xy: "0%"
+    filament_shrinkage_compensation_z: "0.18%"
+    filament_soluble: 0
+    filament_spool_weight: 278
+    filament_stamping_distance: 0
+    filament_stamping_loading_speed: 0
+    filament_toolchange_delay: 0
+    filament_type: "PC"
+    filament_unloading_speed: 0
+    filament_unloading_speed_start: 0
+    filament_vendor: "Prusa Polymers"
+    first_layer_bed_temperature: 110
+    first_layer_temperature: 285
+    full_fan_speed_layer: 3
+    max_fan_speed: 30
+    min_fan_speed: 15
+    min_print_speed: 15
+    overhang_fan_speed_0: 20
+    overhang_fan_speed_1: 12
+    overhang_fan_speed_2: 100
+    overhang_fan_speed_3: 0
+    slowdown_below_layer_time: 15
+    temperature: 285
+    pressure_advance_value: 0.011
+  features:
+    based_id: SXM_FF36F1936C4E41D75F54
+    based_root_id: SXM_108D28B4FA99D5168772

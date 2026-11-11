@@ -1,0 +1,35 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "8"
+    ],
+    "filament_notes": [
+        "Prusament PETG for the 0.25 mm nozzle on T7. Prusa's values for the INDX 0.25 nozzle (profiles 2.5.15): 245/250 C, cap 8 mm3/s, pressure advance 0.17, retract 1. Select it for T7 only. Not test-printed here."
+    ],
+    "filament_retraction_length": [
+        "1"
+    ],
+    "filament_settings_id": [
+        "Prusament PETG @Prusa CORE One INDX 0.25 - T7"
+    ],
+    "from": "User",
+    "inherits": "Prusament PETG @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "Prusament PETG @Prusa CORE One INDX 0.25 - T7",
+    "nozzle_temperature": [
+        "245"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250"
+    ],
+    "pressure_advance": [
+        "0.17"
+    ],
+    "version": "2.3.1.0"
+}

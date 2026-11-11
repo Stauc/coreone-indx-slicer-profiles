@@ -57,3 +57,7 @@ Slice a small TPU + PLA print with several tool changes and look at the G-code: 
 (`M109 C205` on layer 1) and a `G4 S8` line should follow `M104 S220`. On the printer, watch for tangling at the extruder after the first return
 to the TPU tool and for how clean the nozzle is afterwards, since a hotter clean may ooze more. To go back, restore the printer files from the previous
 commit (Orca: delete the `machine_start_gcode` and `change_filament_gcode` keys from the machine JSON).
+
+## Update 2026-11-11
+
+* PrusaSlicer 3: the mixed-nozzle bundle ([prusaslicer-3-mixed-nozzles.md](prusaslicer-3-mixed-nozzles.md)) has the tool-change fix built into its printer preset and also applies the hotter clean and the 8 s soak in the **start** G-code when the first tool prints FLEX. With the official Prusa printer in PS3 only the tool-change part is patched.

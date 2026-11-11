@@ -26,6 +26,7 @@ Details and the compatibility conditions are in [docs/hardware-and-nozzle-layout
 slicers/
   prusaslicer-2.x/        filament/  print/  printer/        (.ini)
   prusaslicer-3-alpha/    presets/user/prusa-research-fff/PrusaResearch/   (.yaml)
+                          mixed-nozzles/   separate preset source with a mixed-nozzle INDX printer (.zip) + its user presets
   orcaslicer/             filament/  process/  machine/      (.json)  + flowtest/ (throw-away calibration presets)
 docs/                     hardware, filament table, flow-test results, PS3 notes, changelog
 scripts/                  Python used to build/audit the profiles (paths assume the author's data folders)
@@ -61,6 +62,7 @@ Close the slicer first, copy the files, start it again. Existing files with the 
 * [docs/filaments.md](docs/filaments.md) - every filament profile with its main values and where they come from
 * [docs/flow-tests.md](docs/flow-tests.md) - max-flow tests, pitfalls, results
 * [docs/prusaslicer-3-alpha.md](docs/prusaslicer-3-alpha.md) - PS3 preset format notes and alpha 13 -> 14 comparison
+* [docs/prusaslicer-3-mixed-nozzles.md](docs/prusaslicer-3-mixed-nozzles.md) - mixed nozzles on one INDX printer in PrusaSlicer 3 alpha 14
 * [docs/tpu-toolchange.md](docs/tpu-toolchange.md) - hotter clean + soak for TPU/FLEX tool changes in all three slicers (from a Prusa forum report, untested here)
 * [docs/changelog.md](docs/changelog.md) - what was done, in order
 
@@ -75,6 +77,10 @@ Close the slicer first, copy the files, start it again. Existing files with the 
   [docs/hardware-and-nozzle-layout.md](docs/hardware-and-nozzle-layout.md) and the idea of one printer preset with different nozzles per tool is the same here, but the tool layout,
   conditions and profiles in this repository were built separately and no files or settings were copied from his repository.
   If a 0.25 + HF0.4 layout suits you better, use his.
+
+* **ltlowe** - [Multi-Size Core One INDX profile bundle](https://forum.prusa3d.com/forum/prusa-indx-general-discussion-announcements-and-releases/i-have-created-a-multi-size-custom-vendor-profil/#post-808190) (Prusa forum, 2 Nov 2026): the idea of a separate PrusaSlicer 3 printer family with its own tools, and the offline-archive layout that
+  [docs/prusaslicer-3-mixed-nozzles.md](docs/prusaslicer-3-mixed-nozzles.md) follows. No files from his bundle are included.
+* **BASF Forward AM** - data sheet and Prusa print profiles for Ultrafuse TPU 95A, used for the temperatures, bed and cooling of the Ultrafuse profiles.
 
 ## Licence
 
