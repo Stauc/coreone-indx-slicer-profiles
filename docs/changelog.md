@@ -4,6 +4,9 @@ Newest first. Dates are the working dates of the session in which each change wa
 
 ## 2026-11-11 - PrusaSlicer 3 mixed nozzles, T6/T7 filaments, TPU
 
+* **Infill default 10 % gyroid** everywhere: nine PrusaSlicer 2.x print presets changed (T7 and T6 White from 15 % grid; Speed 120% and T6 TPU from 15 %; T6 CF from 20 %; 0.07 ColorMix from 8 %), and it is the printer default in the PrusaSlicer 3 bundle (1.0.9). OrcaSlicer already had it.
+* **OrcaSlicer Ultrafuse TPU**: the filament start G-code came from the Nextruder TPU profile (`M900 K0`, heatbreak temperature) and never set the reduced extruder current. It now sends `M572 S0` and `M906 P2` like PrusaSlicer 2.x and 3.
+* The Ultrafuse TPU T6 profile printed well from PrusaSlicer 2.x. The PrusaSlicer 3 G-code for the same part matches it ([comparison](prusaslicer-3-alpha.md#prusaslicer-3-alpha-14-compared-with-prusaslicer-29-observed-10-11-nov-2026)); the OrcaSlicer one has not been re-sliced since the fix.
 * **PrusaSlicer 3 alpha 14: mixed-nozzle INDX printer** as a separate preset source (0.4 HF, 0.4 standard, 0.25 and 1.0 HF tools on one printer), generated from Prusa's FFF profiles 1.0.23. See [prusaslicer-3-mixed-nozzles.md](prusaslicer-3-mixed-nozzles.md). Idea from ltlowe's Multi-Size Core One INDX bundle.
 * New filaments in all three slicers: **Ultrafuse TPU 95A for T6** (standard 0.4), **Prusament PETG for T7** (0.25). T7 Prusament PLA moved to Prusa's 2.5.15 values (220 C, PA 0.13).
 * **Ultrafuse TPU 95A** (all variants): 225 C / 230 first layer, bed 40, fan 20-100 % automatic from BASF's Prusa profile; retract 3 -> 1.5 mm from Prusa's INDX TPU profile.

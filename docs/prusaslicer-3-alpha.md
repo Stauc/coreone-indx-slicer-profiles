@@ -37,3 +37,61 @@ There are no T6, T7 or T8 filaments for PS3 yet.
 
 * PS3 reopened on the *CORE One* printer instead of the *CORE One INDX* one after restarts.
 * Because YAML presets depend on opaque ids, copying files between machines only works if both machines have the same alpha's vendor data.
+
+## PrusaSlicer 3 alpha 14 compared with PrusaSlicer 2.9 (observed 10-11 Nov 2026)
+
+Notes from building the mixed-nozzle printer ([prusaslicer-3-mixed-nozzles.md](prusaslicer-3-mixed-nozzles.md)) and from slicing the same TPU part for
+tool 6 in both slicers. "Why" is the author's reading of the profile files and the slicer log, not something Prusa has stated.
+
+### How presets are organised
+
+| | PrusaSlicer 2.9 | PrusaSlicer 3 alpha 14 | Probable reason |
+|---|---|---|---|
+| Nozzles on a printer | free per extruder in the printer preset | only the *tools* the vendor profile defines for that printer; the INDX has just 0.4 HF | hardware is described in `vendor.yaml` (printer, tool, sheet, feeder) and presets attach to it; Prusa's 1.0.23 only ships INDX presets for 0.4 HF |
+| Print profile | one profile holds everything, including which extruder prints what | split into a *print* preset (layer height, skirt, whole-print settings) and one *tool print* preset per tool (speeds, widths, infill) | each tool can have its own nozzle, so speed and width belong to the tool |
+| Different settings per tool | not possible in one print profile | each tool picks its own tool-print preset, but all share one layer height | one layer height per print; a height is only offered if **every** tool of the printer has a tool-print preset for it (the log says "removed as it has at least one tool without tool print presets") |
+| Sending a print to one tool | print profile can force the extruder (`perimeter_extruder = 6`) or the object has an extruder | only the object's tool assignment | the print preset no longer knows about tools |
+| Build plate | a separate printer preset per plate | the sheet is selected on the printer, and presets can react to `sheet.type` | sheets are hardware objects; Prusa's filaments already switch bed temperature this way |
+| Pressure advance | a line in the filament start G-code (`M572 S...`) | a filament setting (`pressure_advance_value`) | settings instead of G-code snippets |
+| User presets | plain files, shown for any compatible printer | stored per source and vendor and tied to that vendor's preset ids | a preset inherits by id, so it cannot move to another vendor's printer |
+
+### Things that behave differently
+
+* **Profile files are not editable in place.** Prusa's installed profiles were replaced by 1.0.23 on the next start, and switching the INDX nozzle
+  flags on in those files did not unlock the tools anyway. A separate preset source is the way that works.
+* **Named alternatives at one layer height** have to be nested under a single layer-height entry. Two entries with the same condition next to each
+  other are first-match only, so the second never shows up.
+* **Some 2.9 filament keys are rejected** (`filament_load_time`, `filament_unload_time`: "Invalid key ... for class FilamentSettings" in the log), and a
+  preset with one bad key is dropped completely.
+* **Prusa Connect** matches the job by the printer model in the profile (`legacy_printer_model`). With a made-up model name Connect showed "no
+  compatible printers"; with `COREONE_INDX8T` the upload works.
+* **The settings summary at the end of the G-code is not per tool.** For a part printed only with tool 6 it listed tool 8's values (1 perimeter,
+  1.1 mm width, 0 % infill). The moves in the file used tool 6's preset. Do not judge a PrusaSlicer 3 file by that summary.
+* **"Complete individual objects" is off unless set in the project**, the same as 2.9, but it is easy to miss. With it off, two small TPU parts were
+  printed together and the fan stayed near its minimum; with it on, the fan pattern matched 2.9.
+* **The first tool never runs the tool-change G-code**, so a tool-change fix (the TPU hotter clean and soak) also has to be in the start G-code. This is
+  the same in 2.9; it only showed up here because the PS3 start G-code had not been patched.
+* **The slicer writes a log** to `<data dir>/shared_runtime/log.txt`. It names rejected keys and removed presets, which the user interface does not.
+
+### Same part, same settings: the G-code
+
+Ultrafuse TPU 95A on tool 6 (0.4 standard), 0.20 mm, two small parts printed one after the other.
+
+| | 2.9 (printed well) | 3 alpha 14 |
+|---|---|---|
+| Tool, nozzle check, temperatures, retract 1.5 mm, reduced extruder current, TPU clean + soak | reference | identical |
+| Filament used | 739 mm | 740 mm |
+| Outer wall | 6552 mm | 6557 mm, about 6 % more plastic per mm |
+| Bridge infill | about 160 mm as its own feature | none; those areas are printed as ordinary infill |
+| Idle temperature before bed levelling | 100 C | 70 C |
+| Retractions | 267 | 261 |
+
+The wall and bridge differences are probably the newer slicing engine (wall width distribution and bridge detection) rather than a profile value:
+the same widths and speeds are set in both. The idle temperature comes from Prusa's stock start G-code, which differs between the 2.5.15 and 1.0.23
+profile sets.
+
+### Not checked
+
+* Whether the cold-sheet start G-code keeps the bed off on a real print.
+* Anything printed with tools 7 and 8 from PrusaSlicer 3.
+* Whether the 10 % gyroid default reaches the print (the test part has no sparse infill).

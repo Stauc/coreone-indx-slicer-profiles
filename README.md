@@ -61,7 +61,7 @@ Close the slicer first, copy the files, start it again. Existing files with the 
 * [docs/hardware-and-nozzle-layout.md](docs/hardware-and-nozzle-layout.md) - tools, conditions, INDX start G-code facts
 * [docs/filaments.md](docs/filaments.md) - every filament profile with its main values and where they come from
 * [docs/flow-tests.md](docs/flow-tests.md) - max-flow tests, pitfalls, results
-* [docs/prusaslicer-3-alpha.md](docs/prusaslicer-3-alpha.md) - PS3 preset format notes and alpha 13 -> 14 comparison
+* [docs/prusaslicer-3-alpha.md](docs/prusaslicer-3-alpha.md) - PS3 preset format notes and alpha 13 -> 14 comparison, differences from PrusaSlicer 2.9
 * [docs/prusaslicer-3-mixed-nozzles.md](docs/prusaslicer-3-mixed-nozzles.md) - mixed nozzles on one INDX printer in PrusaSlicer 3 alpha 14
 * [docs/tpu-toolchange.md](docs/tpu-toolchange.md) - hotter clean + soak for TPU/FLEX tool changes in all three slicers (from a Prusa forum report, untested here)
 * [docs/changelog.md](docs/changelog.md) - what was done, in order

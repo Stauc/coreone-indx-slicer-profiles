@@ -45,6 +45,9 @@
     "filament_settings_id": [
         "Ultrafuse TPU-95A @Prusa CORE One INDX - 1.06 flow"
     ],
+    "filament_start_gcode": [
+        "M572 S0 ; Pressure advance\nM906 P2 ; set E current"
+    ],
     "filament_type": [
         "TPU"
     ],

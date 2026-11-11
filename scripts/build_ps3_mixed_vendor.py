@@ -4,7 +4,7 @@ generated from the installed Prusa profiles. Idea: ltlowe's "Multi-Size Core One
 import io,os,re,sys,json,hashlib,shutil,zipfile,yaml
 SRC,OUT,ZIP=sys.argv[1],sys.argv[2],sys.argv[3]
 WIPER=sys.argv[4] if len(sys.argv)>4 else None
-NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.8'; SUF='@INDXMIX'
+NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.9'; SUF='@INDXMIX'
 def rd(f): return io.open(os.path.join(SRC,f),encoding='utf-8',newline='').read().replace('\r\n','\n')
 def nid(s): return 'SXM_'+hashlib.sha1(s.encode()).hexdigest()[:20].upper()
 def unq(s):
@@ -72,6 +72,9 @@ V10=[('extrusion_width','1.1'),('first_layer_extrusion_width','1.2'),('perimeter
  ('first_layer_speed','35'),('perimeter_speed','100'),('external_perimeter_speed','100'),('small_perimeter_speed','100'),('infill_speed','100'),('solid_infill_speed','100'),('top_solid_infill_speed','100'),
  ('external_perimeter_acceleration','3000'),('perimeter_acceleration','3000'),('infill_acceleration','3000'),('max_print_speed','300')]
 def tool_file(t):
+    # default infill for the whole printer: 10 % gyroid
+    assert t.count('\n    fill_density: 15%\n')==1 and t.count('\n    fill_pattern: grid\n')==1
+    t=t.replace('\n    fill_density: 15%\n','\n    fill_density: 10%\n').replace('\n    fill_pattern: grid\n','\n    fill_pattern: gyroid\n')
     ls=t.split('\n'); known=set(re.findall(r'(?m)^\s*#?\s*([a-z_0-9]+):',t))
     def items_of(i):
         k=ind(ls[i]); e=block_end(ls,i); items={}; cur=None; pat=re.compile(r'^\s{%d}- condition: print\.layer_height == (\S+)'%(k+2))
@@ -119,7 +122,7 @@ def tool_file(t):
     i4=find(ls,r'^  - condition: tool\.nozzle_diameter == 0\.4 and not tool\.nozzle_high_flow')
     matches(i4,'std04','0.4')
     custom(i4,'std04','0.4','0.20mm White','0.20','0.20',{'max_volumetric_speed':'12'})
-    custom(i4,'std04','0.4','0.20mm CF','0.20','0.20',{'bottom_solid_layers':'4','bridge_speed':'35','default_acceleration':'2500','external_perimeter_acceleration':'2500','external_perimeter_speed':'120','fill_density':'20%','fill_pattern':'gyroid','first_layer_speed':'30','gap_fill_speed':'60','infill_acceleration':'4000','infill_speed':'150','max_volumetric_speed':'8','perimeter_acceleration':'3000','perimeter_speed':'150','perimeters':'3','small_perimeter_speed':'100','solid_infill_acceleration':'3000','solid_infill_speed':'120','support_material_speed':'60','top_solid_infill_speed':'80','top_solid_layers':'6'})
+    custom(i4,'std04','0.4','0.20mm CF','0.20','0.20',{'bottom_solid_layers':'4','bridge_speed':'35','default_acceleration':'2500','external_perimeter_acceleration':'2500','external_perimeter_speed':'120','fill_pattern':'gyroid','first_layer_speed':'30','gap_fill_speed':'60','infill_acceleration':'4000','infill_speed':'150','max_volumetric_speed':'8','perimeter_acceleration':'3000','perimeter_speed':'150','perimeters':'3','small_perimeter_speed':'100','solid_infill_acceleration':'3000','solid_infill_speed':'120','support_material_speed':'60','top_solid_infill_speed':'80','top_solid_layers':'6'})
     custom(i4,'std04','0.4','0.20mm TPU','0.20','0.20',{'bottom_solid_layers':'4','bridge_acceleration':'800','bridge_speed':'25','default_acceleration':'1000','external_perimeter_acceleration':'800','external_perimeter_speed':'30','fill_pattern':'gyroid','first_layer_speed':'20','gap_fill_speed':'25','infill_acceleration':'1000','infill_speed':'45','max_volumetric_speed':'3.5','perimeter_acceleration':'800','perimeter_speed':'40','perimeters':'3','small_perimeter_speed':'30','solid_infill_acceleration':'800','solid_infill_speed':'40','support_material_speed':'30','top_solid_infill_acceleration':'800','top_solid_infill_speed':'30','travel_speed':'200'})
     matches(find(ls,r'^  - condition: tool\.nozzle_diameter == 0\.25\s*$',find(ls,r'^  - condition: tool\.nozzle_high_flow')),'n025','0.25',skip=('0.05',))
     i25=find(ls,r'^  - condition: tool\.nozzle_diameter == 0\.25\s*$',find(ls,r'^  - condition: tool\.nozzle_high_flow'))
@@ -138,7 +141,7 @@ def tool_file(t):
     S={'perimeter_speed':'300','external_perimeter_speed':'240','small_perimeter_speed':'204','infill_speed':'360','solid_infill_speed':'300','top_solid_infill_speed':'120','gap_fill_speed':'144','bridge_speed':'60','support_material_speed':'144','first_layer_speed':'54','first_layer_solid_infill_speed':'120','first_layer_speed_over_raft':'36','max_print_speed':'360','fill_pattern':'gyroid'}
     custom(i,'hf04','0.4HF','0.20mm Speed 120%','0.20','0.20',S)
     custom(i,'hf04','0.4HF','0.25mm Speed 120%','0.25','0.25',dict(S,perimeter_speed='264',solid_infill_speed='288'))
-    custom(i,'hf04','0.4HF','0.07mm Extra Fine ColorMix','0.07','0.10',{'fill_pattern':'gyroid','fill_density':'8%','top_solid_layers':'9','bottom_solid_layers':'7'})
+    custom(i,'hf04','0.4HF','0.07mm Extra Fine ColorMix','0.07','0.10',{'fill_pattern':'gyroid','fill_density':'10%','top_solid_layers':'9','bottom_solid_layers':'7'})
     custom(i,'hf04','0.4HF','0.12mm Detail ColorMix','0.12','0.15',{'fill_pattern':'gyroid','fill_density':'10%','top_solid_layers':'6','bottom_solid_layers':'5'})
     custom(i,'hf04','0.4HF','0.15mm Detail ColorMix','0.15','0.15',{'fill_pattern':'gyroid','fill_density':'10%','top_solid_layers':'6','bottom_solid_layers':'5'})
     # per-nozzle limits for 1.0
