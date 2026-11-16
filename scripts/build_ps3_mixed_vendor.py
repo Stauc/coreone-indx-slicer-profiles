@@ -4,7 +4,7 @@ generated from the installed Prusa profiles. Idea: ltlowe's "Multi-Size Core One
 import io,os,re,sys,json,hashlib,shutil,zipfile,yaml
 SRC,OUT,ZIP=sys.argv[1],sys.argv[2],sys.argv[3]
 WIPER=sys.argv[4] if len(sys.argv)>4 else None
-NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.9'; SUF='@INDXMIX'
+NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.12'; SUF='@INDXMIX'
 def rd(f): return io.open(os.path.join(SRC,f),encoding='utf-8',newline='').read().replace('\r\n','\n')
 def nid(s): return 'SXM_'+hashlib.sha1(s.encode()).hexdigest()[:20].upper()
 def unq(s):
@@ -35,7 +35,7 @@ txt['preset-tool-coreone-indx.yaml']=mixed_tool(txt['preset-tool-coreone-indx.ya
 
 # --- v1.0.1: 1.0 HF nozzle + every layer height on every nozzle ("Match" entries), because PS3 only offers
 #     layer heights that exist for all tools of the printer
-H=['0.05','0.07','0.10','0.12','0.15','0.20','0.25','0.40','0.50','0.60']
+H=['0.05','0.07','0.10','0.12','0.15','0.20','0.25','0.30','0.40','0.50','0.60']
 def ind(l): return len(l)-len(l.lstrip(' '))
 def code(l): return l.strip() and not l.strip().startswith('#')
 def block_end(ls,i):
@@ -64,13 +64,17 @@ def print_file(t):
     fill(find(ls,r'^    - condition: tool\.nozzle_diameter == 0\.4\s*$'),'hf04')
     # default tool print for the 1.0 nozzle
     d=find(ls,r'^- condition: tool\.nozzle_diameter == 0\.8')
-    e=block_end(ls,d); ls[e:e]=['- condition: tool.nozzle_diameter == 1','  id: dtp-hf10','  values:','    default_tool_print: 0.50mm Vase']
+    e=block_end(ls,d); ls[e:e]=['- condition: tool.nozzle_diameter == 1','  id: dtp-hf10','  values:','    default_tool_print: 0.50mm Normal']
     r=find(ls,r'^- condition: printer\.base_model == "COREONE_INDX"',find(ls,r'^match_mode: all_matches')); v=find(ls,r'^  values:',r); ls[v+1:v+1]=['    skirts: 2']
     return '\n'.join(ls)
 V10=[('extrusion_width','1.1'),('first_layer_extrusion_width','1.2'),('perimeter_extrusion_width','1.1'),('external_perimeter_extrusion_width','1.1'),('infill_extrusion_width','1.1'),('solid_infill_extrusion_width','1.1'),('top_infill_extrusion_width','1'),('support_material_extrusion_width','1'),
  ('perimeters','1'),('top_solid_layers','0'),('top_solid_min_thickness','0'),('bottom_solid_min_thickness','1'),('fill_density','0%'),('elefant_foot_compensation','0.3'),('gap_fill_enabled','0'),('gap_fill_speed','40'),
  ('first_layer_speed','35'),('perimeter_speed','100'),('external_perimeter_speed','100'),('small_perimeter_speed','100'),('infill_speed','100'),('solid_infill_speed','100'),('top_solid_infill_speed','100'),
  ('external_perimeter_acceleration','3000'),('perimeter_acceleration','3000'),('infill_acceleration','3000'),('max_print_speed','300')]
+N10=[('extrusion_width','1.05'),('first_layer_extrusion_width','1.2'),('perimeter_extrusion_width','1.05'),('external_perimeter_extrusion_width','1.05'),('infill_extrusion_width','1.05'),('solid_infill_extrusion_width','1.05'),('top_infill_extrusion_width','1'),('support_material_extrusion_width','1'),
+ ('perimeters','2'),('top_solid_min_thickness','1.2'),('bottom_solid_min_thickness','1'),('fill_density','15%'),('fill_pattern','gyroid'),('elefant_foot_compensation','0.3'),('gap_fill_enabled','1'),('gap_fill_speed','40'),
+ ('small_perimeter_speed','40'),('first_layer_speed','30'),('bridge_speed','30'),('external_perimeter_acceleration','3000'),('perimeter_acceleration','3000'),('infill_acceleration','3000'),('max_print_speed','300')]
+NORM10={'0.30':(5,4,60,95,60),'0.40':(4,3,50,70,50),'0.50':(3,3,40,55,40)}  # top, bottom layers, outer wall, limit speed (30 mm3/s), top surface
 def tool_file(t):
     # default infill for the whole printer: 10 % gyroid
     assert t.count('\n    fill_density: 15%\n')==1 and t.count('\n    fill_pattern: grid\n')==1
@@ -107,6 +111,26 @@ def tool_file(t):
             body=[('  '+l if l.strip() else l) for l in body]; body[first]=' '*(k+4)+'- '+body[first].strip()
             ls[j+1:je]=[' '*(k+4)+'id: tg-%s-%s'%(tag,h),' '*(k+4)+'variants:']+body; je=block_end(ls,j)
         ls[je:je]=new
+    NOZ={'std04':0.4,'n025':0.25,'hf04':0.4,'hf10':1.0}
+    WK=('extrusion_width','perimeter_extrusion_width','external_perimeter_extrusion_width','infill_extrusion_width','solid_infill_extrusion_width','top_infill_extrusion_width','support_material_extrusion_width')
+    def widen(x,h,tag):
+        # PS3 validates the line widths of every tool at the print layer height ("extrusion width is too low to be printable"):
+        # a Match entry for a height the nozzle was never meant for gets lines at least 1.5x the layer height (capped at 2.48x the nozzle (PS3 rejects lines wider than 2.5x the nozzle))
+        a,_,b=x.partition(':')
+        if a in WK:
+            try: w=float(b)
+            except ValueError: return x
+            w2=min(max(w,round(1.5*float(h),2)),2.48*NOZ[tag])
+            if w2>w: return '%s: %s'%(a,('%.2f'%w2).rstrip('0').rstrip('.'))
+        return x
+    ROOTW={'std04':0.45,'hf04':0.45,'n025':0.25,'hf10':1.05}
+    def missing(lines,h,tag):
+        have={l.partition(':')[0].strip() for l in lines}; out=[]
+        for a in WK:
+            if a in have or a=='support_material_extrusion_width': continue
+            w=ROOTW[tag]; w2=min(max(w,round(1.5*float(h),2)),2.48*NOZ[tag])
+            if w2>w: out.append('%s: %s'%(a,('%.2f'%w2).rstrip('0').rstrip('.')))
+        return out
     def matches(i,tag,suffix,skip=()):
         k=ind(ls[i]); e=block_end(ls,i); items={}; cur=None; pat=re.compile(r'^\s{%d}- condition: print\.layer_height == (\S+)'%(k+2))
         for l in ls[i+1:e]:
@@ -117,7 +141,7 @@ def tool_file(t):
         for h in H:
             if h in items or h in skip: continue
             near=min(items,key=lambda x:abs(float(x)-float(h)))
-            new+=[' '*(k+2)+'- condition: print.layer_height == %s'%h,' '*(k+4)+'name: %smm Match @COREONEINDX %s'%(h,suffix),' '*(k+4)+'id: tm-%s-%s'%(tag,h),' '*(k+4)+'values:']+[' '*(k+6)+x for x in items[near]]
+            new+=[' '*(k+2)+'- condition: print.layer_height == %s'%h,' '*(k+4)+'name: %smm Match @COREONEINDX %s'%(h,suffix),' '*(k+4)+'id: tm-%s-%s'%(tag,h),' '*(k+4)+'values:']+[' '*(k+6)+widen(x,h,tag) for x in items[near]+missing(items[near],h,tag)]
         ls[e:e]=new
     i4=find(ls,r'^  - condition: tool\.nozzle_diameter == 0\.4 and not tool\.nozzle_high_flow')
     matches(i4,'std04','0.4')
@@ -128,15 +152,20 @@ def tool_file(t):
     i25=find(ls,r'^  - condition: tool\.nozzle_diameter == 0\.25\s*$',find(ls,r'^  - condition: tool\.nozzle_high_flow'))
     custom(i25,'n025','0.25','0.05mm Ultra Fine','0.05','0.07',{'bottom_solid_layers':'10','top_solid_layers':'14','support_material_contact_distance':'0.1','max_volumetric_speed':'4'})
     hf=find(ls,r'^  - condition: tool\.nozzle_high_flow'); i=find(ls,r'^    - condition: tool\.nozzle_diameter == 0\.4\s*$',hf); e=block_end(ls,i)
-    blk=['# 1.0 high-flow nozzle (T8): single-wall "vase" profiles from the PrusaSlicer 2.x presets','    - condition: tool.nozzle_diameter == 1','      id: t-hf10-root','      values:']
-    for a,b in V10:
-        assert a in known,a
-        blk.append('        %s: %s'%(a,b))
+    blk=['# 1.0 high-flow nozzle (T8): normal profiles (2 perimeters, 15 % gyroid, 1.05 mm lines, speeds limited to 30 mm3/s) + single-wall "vase" alternatives','    - condition: tool.nozzle_diameter == 1','      id: t-hf10-root','      values:']
+    for a_,b_ in N10:
+        assert a_ in known,a_
+        blk.append('        %s: %s'%(a_,b_))
     blk.append('      variants:')
-    for h in ['0.40','0.50','0.60']:
-        blk+=['      - condition: print.layer_height == %s'%h,'        name: %smm Vase @COREONEINDX 1.0HF'%h,'        id: t-hf10-%s'%h,'        values:','          perimeters: 1']
+    for h,(top,bot,outer,lim,tops) in NORM10.items():
+        blk+=['      - condition: print.layer_height == %s'%h,'        name: %smm Normal @COREONEINDX 1.0HF'%h,'        id: t-hf10-%s'%h,'        values:']
+        for a_,b_ in [('top_solid_layers',top),('bottom_solid_layers',bot),('external_perimeter_speed',outer),('perimeter_speed',lim),('infill_speed',lim),('solid_infill_speed',lim),('top_solid_infill_speed',tops),('support_material_speed',min(lim,60))]:
+            assert a_ in known,a_
+            blk.append('          %s: %s'%(a_,b_))
     ls[e:e]=blk
     matches(e+1,'hf10','1.0HF')
+    for vh,vb in (('0.60','0.50'),('0.50','0.50'),('0.40','0.40')):
+        custom(e+1,'hf10','1.0HF','%smm Vase'%vh,vh,vb,dict(V10))
     matches(i,'hf04','0.4HF')
     S={'perimeter_speed':'300','external_perimeter_speed':'240','small_perimeter_speed':'204','infill_speed':'360','solid_infill_speed':'300','top_solid_infill_speed':'120','gap_fill_speed':'144','bridge_speed':'60','support_material_speed':'144','first_layer_speed':'54','first_layer_solid_infill_speed':'120','first_layer_speed_over_raft':'36','max_print_speed':'360','fill_pattern':'gyroid'}
     custom(i,'hf04','0.4HF','0.20mm Speed 120%','0.20','0.20',S)

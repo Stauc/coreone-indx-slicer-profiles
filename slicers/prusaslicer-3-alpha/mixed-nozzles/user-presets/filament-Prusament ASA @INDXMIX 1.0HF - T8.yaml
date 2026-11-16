@@ -1,0 +1,73 @@
+kind: filament
+id: 6a0d4895-28ff-44ff-941d-c8ef29c8dfa5
+variants:
+- condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
+  id: YpUS+pJ1RA2BHoYOTUiU6g
+  name: "Prusament ASA @INDXMIX 1.0HF - T8"
+  unconditional_inherits:
+  - SXM_4E15B9756D32E01D7DC1
+  values:
+    bed_temperature: 110
+    bridge_fan_speed: 30
+    chamber_minimal_temperature: 40
+    chamber_temperature: 55
+    cooling: 1
+    cooling_perimeter_transition_distance: 15
+    cooling_slowdown_logic: "consistent_surface"
+    disable_fan_first_layers: 4
+    enable_dynamic_fan_speeds: 1
+    end_filament_gcode: "; Filament-specific end gcode"
+    extrusion_multiplier: 1
+    fan_always_on: 1
+    fan_below_layer_time: 20
+    filament_abrasive: 0
+    filament_colour: "#FFF2EC"
+    filament_cooling_final_speed: 0
+    filament_cooling_initial_speed: 0
+    filament_cooling_moves: 0
+    filament_cost: 35.28
+    filament_density: 1.07
+    filament_diameter: 1.75
+    filament_flush_speed: 0
+    filament_flush_volume: 0
+    filament_infill_max_crossing_speed: 110
+    filament_infill_max_speed: 200
+    filament_loading_speed: 0
+    filament_loading_speed_start: 0
+    filament_max_volumetric_speed: 30
+    filament_minimal_purge_on_wipe_tower: 18
+    filament_multitool_ramming: 1
+    filament_multitool_ramming_flow: 30
+    filament_multitool_ramming_volume: 18
+    filament_notes: "Prusament ASA 1.75 mm for the 1.0 mm high-flow nozzle on T8 of the mixed-nozzle INDX printers. Prusa has no 1.0 ASA, so this follows Prusament ASA @COREONE HF0.8 (270 C, bed 110, fan 20-30, bridges 30, layer time 20/20 s, min speed 15) with the INDX HF0.4 values where the 0.8 profile has none (retract 0.8, chamber 55/40). Cap 30 mm3/s as on the INDX HF0.4 and the T8 PETG profiles (Prusa 0.8 is 36 x about 0.82); pressure advance 0.022 x0.447 x0.69 = 0.007. Shrinkage compensation 0.22 percent comes from the Prusa CORE One ASA group. Raise the cap with a max-flow test."
+    filament_purge_multiplier: "100%"
+    filament_ramming_parameters: "250 100 42.4194 42.4194| 0.05 42.4387 0.45 42.4387 0.95 42.4387 1.45 42.4387 1.95 42.4387 2.45 42.4387 2.95 42.4387 3.45 42.4387 3.95 42.4387 4.45 42.4387 4.95 42.4387"
+    retract_length: 0.8
+    retract_length_toolchange: 0.8
+    filament_shrinkage_compensation_xy: "0.22%"
+    filament_shrinkage_compensation_z: "0.22%"
+    filament_soluble: 0
+    filament_spool_weight: 278
+    filament_stamping_distance: 0
+    filament_stamping_loading_speed: 0
+    filament_toolchange_delay: 0
+    filament_type: "ASA"
+    filament_unloading_speed: 0
+    filament_unloading_speed_start: 0
+    filament_vendor: "Prusa Polymers"
+    first_layer_bed_temperature: 110
+    first_layer_temperature: 270
+    full_fan_speed_layer: 5
+    max_fan_speed: 30
+    min_fan_speed: 20
+    min_print_speed: 15
+    overhang_fan_speed_0: 30
+    overhang_fan_speed_1: 30
+    overhang_fan_speed_2: 25
+    overhang_fan_speed_3: 0
+    slowdown_below_layer_time: 20
+    temperature: 270
+    pressure_advance_value: 0.007
+  features:
+    based_id: SXM_4E15B9756D32E01D7DC1
+    based_root_id: SXM_CBE6BCBB02A0EF6A2FAA

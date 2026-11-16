@@ -9,7 +9,7 @@ Prusa CORE One INDX 8T, firmware 8.0.0. Eight tool heads with different nozzles.
 | T1-T5 | 0.4 HF (CHT) | default tools |
 | T6 | 0.4 standard (no CHT) | CF, TPU, white. White PLA tends to clog, so it lives here |
 | T7 | 0.25 | fine detail |
-| T8 | 1.0 HF | vase mode, large lines |
+| T8 | 1.0 HF | large lines, normal and vase mode |
 
 A second printer, a Mini IS, is outside the scope of this repository.
 

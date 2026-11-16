@@ -15,7 +15,7 @@ The idea of a separate printer family with its own tools comes from ltlowe's
 
 | File | What it is |
 |---|---|
-| `slicers/prusaslicer-3-alpha/mixed-nozzles/stauc-indx-mixed_offline_1.0.9.zip` | the preset source (offline archive) |
+| `slicers/prusaslicer-3-alpha/mixed-nozzles/stauc-indx-mixed_offline_1.0.12.zip` | the preset source (offline archive) |
 | `slicers/prusaslicer-3-alpha/mixed-nozzles/user-presets/` | the author's filaments for it, one per nozzle type |
 | `scripts/build_ps3_mixed_vendor.py` | builds the archive from an installed `PrusaResearch` preset folder |
 | `scripts/port_ps3_mixed_user_presets.py` | converts PrusaSlicer 2.x INDX filament `.ini` files into user presets for it |
@@ -29,12 +29,12 @@ The idea of a separate printer family with its own tools comes from ltlowe's
 ## What is in the archive
 
 * **Tools**: 0.4 HF, 0.4, 0.25, 1.0 HF. **Sheets**: Satin, PEI Smooth, PEI Textured, PA Nylon, PP and "GECO (cold)".
-* **Layer heights**: 0.05 / 0.07 / 0.10 / 0.12 / 0.15 / 0.20 / 0.25 / 0.40 / 0.50 / 0.60 mm on every nozzle. PrusaSlicer 3 only offers a layer height
+* **Layer heights**: 0.05 / 0.07 / 0.10 / 0.12 / 0.15 / 0.20 / 0.25 / 0.30 / 0.40 / 0.50 / 0.60 mm on every nozzle. PrusaSlicer 3 only offers a layer height
   that exists for *all* tools of the printer, so nozzles without a real profile at a height get a placeholder named "Match" (a copy of their nearest
-  real profile). Nothing stops you assigning an object to a tool whose nozzle cannot print that layer height.
+  real profile). PrusaSlicer 3 checks the line widths of every tool at the print layer height, so the placeholders get lines of at least 1.5 x the layer height, capped at 2.48 x the nozzle diameter (otherwise "extrusion width is too low / too large to be printable"). The 0.25 mm nozzle has no real profile above 0.20 mm. Nothing stops you assigning an object to a tool whose nozzle cannot print that layer height.
 * **Print presets, selectable per tool** at one layer height:
   0.4 HF - Prusa's four plus *Speed 120%* (0.20, 0.25) and *ColorMix* (0.07, 0.12, 0.15); 0.4 standard - copies of the HF ones plus *White*, *CF*,
-  *TPU* (0.20); 0.25 - Prusa's three plus *Ultra Fine* (0.05); 1.0 HF - *Vase* (0.40, 0.50, 0.60).
+  *TPU* (0.20); 0.25 - Prusa's three plus *Ultra Fine* (0.05); 1.0 HF - *Normal* (0.30, 0.40, 0.50: 2 perimeters, 15 % gyroid, 1.05 mm lines, 30 mm3/s) and *Vase* (0.40, 0.50, 0.60); "0.50mm Normal" is the default for T8.
 * **Default infill**: 10 % gyroid for the whole printer.
 * **Printer preset**: the author's Wiper tool-change G-code with the TPU/FLEX hotter clean + soak ([tpu-toolchange.md](tpu-toolchange.md)), also
   applied in the start G-code for the first tool. With a cold sheet selected the start G-code keeps the bed heater off. 2-loop skirt.

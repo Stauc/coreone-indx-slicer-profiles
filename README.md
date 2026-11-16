@@ -16,7 +16,7 @@ used to generate and verify them.
 | T1-T5 | 0.4 mm high-flow (CHT) | everyday PLA / PETG / ASA / TPU |
 | T6 | 0.4 mm standard (no CHT) | CF filaments, TPU, white PLA/PETG |
 | T7 | 0.25 mm | fine detail |
-| T8 | 1.0 mm high-flow | big/vase-mode prints |
+| T8 | 1.0 mm high-flow | big prints, normal and vase mode |
 
 Printer variants: *Mixed Nozzles + Wiper*, *+ GECO* (cold-plate variant, PLA only), *HF 0.4 nozzle + Wiper* (all tools 0.4 HF).
 Details and the compatibility conditions are in [docs/hardware-and-nozzle-layout.md](docs/hardware-and-nozzle-layout.md).

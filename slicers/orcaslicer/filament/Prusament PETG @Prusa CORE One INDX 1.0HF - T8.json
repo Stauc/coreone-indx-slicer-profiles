@@ -1,0 +1,83 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T HF 0.4 nozzle",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - LAN",
+        "Prusa CORE One INDX 8T HF 0.4 nozzle - Connect",
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "default_filament_colour": [
+        "#FF8000"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "35"
+    ],
+    "fan_max_speed": [
+        "65"
+    ],
+    "fan_min_speed": [
+        "30"
+    ],
+    "filament_cost": [
+        "29.99"
+    ],
+    "filament_density": [
+        "1.27"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "30"
+    ],
+    "filament_notes": [
+        "Prusament PETG 1.75 mm for the 1.0 mm high-flow nozzle on T8 of the mixed-nozzle INDX printers. Prusa has no 1.0 PETG, so this follows Prusament PETG @COREONE HF0.8 (260 C, cap 37 mm3/s, fan 30-65, bridges 65, layer time 20/35 s) scaled to INDX (about 0.82, so a cap of 30 mm3/s, like the Sunlu T8 profile); bed 90/85 and flow 1.0 from Prusament PETG @COREONEINDX HF0.4; pressure advance 0.058 x0.447 (Prusa 0.4 to 0.8) x0.69 (0.8 to 1.0 step used for the CF profiles) = 0.018. Raise the cap with a max-flow test."
+    ],
+    "filament_settings_id": [
+        "Prusament PETG @Prusa CORE One INDX 1.0HF - T8"
+    ],
+    "filament_vendor": [
+        "Prusa Polymers"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "90"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "85"
+    ],
+    "inherits": "Prusament PETG @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "Prusament PETG @Prusa CORE One INDX 1.0HF - T8",
+    "nozzle_temperature": [
+        "260"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "260"
+    ],
+    "nozzle_temperature_range_high": [
+        "250"
+    ],
+    "nozzle_temperature_range_low": [
+        "220"
+    ],
+    "overhang_fan_speed": [
+        "65"
+    ],
+    "pressure_advance": [
+        "0.018"
+    ],
+    "slow_down_layer_time": [
+        "20"
+    ],
+    "textured_plate_temp": [
+        "90"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "85"
+    ],
+    "version": "2.3.1.0"
+}

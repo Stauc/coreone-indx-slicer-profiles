@@ -1,0 +1,80 @@
+{
+    "compatible_printers": [
+        "Prusa CORE One INDX 8T Mixed Nozzles - LAN",
+        "Prusa CORE One INDX 8T Mixed Nozzles - Connect"
+    ],
+    "default_filament_colour": [
+        "#FFFFFF"
+    ],
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "fan_cooling_layer_time": [
+        "25"
+    ],
+    "fan_max_speed": [
+        "70"
+    ],
+    "fan_min_speed": [
+        "40"
+    ],
+    "filament_cost": [
+        "14"
+    ],
+    "filament_density": [
+        "1.28"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "11"
+    ],
+    "filament_notes": [
+        "SUNLU High Speed Matte PETG White for the standard 0.4 mm nozzle on T6. Values of the Sunlu HS Matte PETG HF0.4 tune (250/245 C, bed 80, flow 1.0) with the cap lowered to 11 mm3/s for the standard nozzle and PA 0.050. Select it for T6 only."
+    ],
+    "filament_settings_id": [
+        "Sunlu High Speed Matte PETG White @Prusa CORE One INDX Std 0.4 - T6"
+    ],
+    "filament_vendor": [
+        "Sunlu"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "80"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "80"
+    ],
+    "inherits": "Prusament PETG @Prusa CORE One INDX",
+    "is_custom_defined": "0",
+    "name": "Sunlu High Speed Matte PETG White @Prusa CORE One INDX Std 0.4 - T6",
+    "nozzle_temperature": [
+        "250"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "245"
+    ],
+    "nozzle_temperature_range_high": [
+        "260"
+    ],
+    "nozzle_temperature_range_low": [
+        "240"
+    ],
+    "overhang_fan_speed": [
+        "70"
+    ],
+    "pressure_advance": [
+        "0.05"
+    ],
+    "slow_down_layer_time": [
+        "9"
+    ],
+    "textured_plate_temp": [
+        "80"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "80"
+    ],
+    "version": "2.3.1.0"
+}

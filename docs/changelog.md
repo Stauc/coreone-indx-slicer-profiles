@@ -2,6 +2,13 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11-16 - Sunlu White, Prusament PETG/ASA for 1.0 HF, normal 1.0 HF prints
+
+* **Sunlu High Speed Matte PETG White** for T6 (standard 0.4; cap 11 mm3/s, PA 0.050 estimated from the GeeeTech Std/HF step) and for T8 (copy of the T8 tune, colour #FFFFFF), in PrusaSlicer 2.x, OrcaSlicer and as PrusaSlicer 3 user presets.
+* **Prusament PETG @ 1.0HF - T8** (260 C, bed 90/85, cap 30, PA 0.018) and **Prusament ASA @ 1.0HF - T8** (270 C, bed 110, fan 20-30, cap 30, PA 0.007, shrinkage compensation 0.22 % from Prusa's CORE One ASA group). Prusa has no 1.0 mm profiles; both follow Prusa's 0.8 HF values scaled to INDX. Caps and PA are estimates until a flow and a PA test.
+* **Normal print presets for the 1.0 HF nozzle (T8)**: 0.30 / 0.40 / 0.50 mm, 2 perimeters, 15 % gyroid, 1.05 mm lines, speeds limited to 30 mm3/s (95 / 70 / 55 mm/s), 2-loop skirt, in PrusaSlicer 2.x and OrcaSlicer. In the PrusaSlicer 3 bundle (1.0.10) the Vase profiles stay as alternatives at 0.40 / 0.50 / 0.60 and "0.50mm Normal" is the default for T8; 0.30 mm is now a layer height on every nozzle.
+* **PrusaSlicer 3 bundle 1.0.11 / 1.0.12**: PS3 validates the line widths of *every* tool at the print layer height, even unused ones. The 0.25 mm nozzle (T7) has 0.25 mm lines, so any layer height above 0.20 gave "extrusion width is too low to be printable at current layer height" (only 0.20 worked). The "Match" placeholders now get lines of at least 1.5 x the layer height, capped at 2.48 x the nozzle diameter (PS3 rejects wider: "too large to be printable with the nozzle diameter"). Reported working by the author in PS3 alpha 14 up to 0.60 mm (the 0.60 mm margin on T7 is only 0.02 mm).
+
 ## 2026-11-11 - PrusaSlicer 3 mixed nozzles, T6/T7 filaments, TPU
 
 * The TPU part sliced by **PrusaSlicer 3 printed with a better fit** than the PrusaSlicer 2.x one; the cause is how each slicer splits a thin wall into beads, see [prusaslicer-3-alpha.md](prusaslicer-3-alpha.md). Also noted there: alpha 14 crashes when opening a 2.x project with mixed nozzles, and its built-in flow and temperature towers.
