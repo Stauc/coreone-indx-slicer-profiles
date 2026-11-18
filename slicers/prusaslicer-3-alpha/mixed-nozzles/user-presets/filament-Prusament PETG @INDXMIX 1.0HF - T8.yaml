@@ -1,8 +1,8 @@
 kind: filament
-id: 95b062de-f364-42b4-85cf-a2e5f6c0e300
+id: 25ee919d-d361-4ff2-a86c-6c5f89eeed26
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
-  id: EuLXrvrXkneV9oqGsN2QdA
+  id: Zeg5T+I7mJsm7F4u4eAf5g
   name: "Prusament PETG @INDXMIX 1.0HF - T8"
   unconditional_inherits:
   - SXM_72AAB98F7F16AB008317

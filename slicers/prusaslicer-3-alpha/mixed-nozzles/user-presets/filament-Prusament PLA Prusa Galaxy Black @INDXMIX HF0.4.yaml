@@ -1,8 +1,8 @@
 kind: filament
-id: e174d9c1-3f9d-4809-bc91-efdd15884c78
+id: d3acbba0-44bd-41e6-89ae-50947ed34670
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: rMqvsIZu+Mi4n/C5TQeqLg
+  id: I880Cj2aUe2hO/OSbAvlsA
   name: "Prusament PLA Prusa Galaxy Black @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

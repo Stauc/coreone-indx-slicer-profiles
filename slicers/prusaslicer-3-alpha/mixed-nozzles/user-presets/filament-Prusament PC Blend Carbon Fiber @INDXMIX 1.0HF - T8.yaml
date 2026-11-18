@@ -1,8 +1,8 @@
 kind: filament
-id: 987001de-6725-417f-85d4-c80119e050a9
+id: b4526c0f-5826-47fc-9502-50f1755a1e10
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
-  id: wr5Py9pMLvSaNDBXN/Q+iQ
+  id: 8nBJO3jzxNhi3/U0+PpIZQ
   name: "Prusament PC Blend Carbon Fiber @INDXMIX 1.0HF - T8"
   unconditional_inherits:
   - SXM_FF36F1936C4E41D75F54

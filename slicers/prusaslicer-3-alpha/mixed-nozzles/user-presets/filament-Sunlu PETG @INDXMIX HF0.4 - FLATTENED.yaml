@@ -1,8 +1,8 @@
 kind: filament
-id: f164207b-afc1-4932-9f36-946995145a29
+id: 26204137-a903-4a02-aa37-c761350a93ac
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: t1pa+ue1j7E7OPYChLryug
+  id: kiSdt5cI0Zeizk8+CQXgZA
   name: "Sunlu PETG @INDXMIX HF0.4 - FLATTENED"
   unconditional_inherits:
   - SXM_72AAB98F7F16AB008317

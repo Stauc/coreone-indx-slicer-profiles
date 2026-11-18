@@ -1,8 +1,8 @@
 kind: filament
-id: 01cba372-768c-4d73-98ea-b4f8f426f022
+id: 2e8fd2f8-b223-4ec8-ab23-37e1d5637026
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow and (sheet.type == "cold"))
-  id: KEi1i3Ftc2GcojmnFaNrEg
+  id: dIFoBqlS5t2m2LxLgJraWQ
   name: "Prusament PLA @INDXMIX HF0.4 - GECO"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

@@ -1,8 +1,8 @@
 kind: filament
-id: b46942f0-2b93-415d-a460-0c6b27c756e6
+id: 6af31f7a-ad5c-4765-b940-737c21614a1c
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: Cu2d7LwBkEM+UbgJfxY3bQ
+  id: JwVGNfnHiEKn6PoEbG30iw
   name: "Prusament PLA ColorMix Black @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

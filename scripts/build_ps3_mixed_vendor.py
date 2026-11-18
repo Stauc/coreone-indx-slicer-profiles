@@ -4,7 +4,7 @@ generated from the installed Prusa profiles. Idea: ltlowe's "Multi-Size Core One
 import io,os,re,sys,json,hashlib,shutil,zipfile,yaml
 SRC,OUT,ZIP=sys.argv[1],sys.argv[2],sys.argv[3]
 WIPER=sys.argv[4] if len(sys.argv)>4 else None
-NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.12'; SUF='@INDXMIX'
+NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.14'; SUF='@INDXMIX'
 def rd(f): return io.open(os.path.join(SRC,f),encoding='utf-8',newline='').read().replace('\r\n','\n')
 def nid(s): return 'SXM_'+hashlib.sha1(s.encode()).hexdigest()[:20].upper()
 def unq(s):
@@ -15,10 +15,13 @@ files+=sorted(f for f in os.listdir(SRC) if f.startswith('preset-filament-') and
 txt={f:rd(f) for f in files}
 # --- tool_print: enable 0.25, add standard 0.4 (values copied from 0.4HF)
 def mixed_tool(t):
-    ls=t.split('\n'); s=next(i for i,l in enumerate(ls) if l.strip()=='# # 0.25 nozzle'); out=ls[:s]
-    for l in ls[s:]:
-        if l.strip()=='# only_one_perimeter_first_layer': continue
-        out.append(re.sub(r'^(\s*)# ?',r'\1',l,count=1))
+    ls=t.split('\n'); s=next((i for i,l in enumerate(ls) if l.strip()=='# # 0.25 nozzle'),None)
+    if s is None: out=list(ls)   # Prusa FFF >= 1.0.24 ships the 0.25 nozzle block enabled
+    else:
+        out=ls[:s]
+        for l in ls[s:]:
+            if l.strip()=='# only_one_perimeter_first_layer': continue
+            out.append(re.sub(r'^(\s*)# ?',r'\1',l,count=1))
     a=next(i for i,l in enumerate(ls) if l.startswith('      - condition: print.layer_height == 0.10'))
     b=next(i for i,l in enumerate(ls) if l.strip().startswith('# # 0.5 high-flow nozzle') or l.strip().startswith('# - condition: tool.nozzle_diameter == 0.5'))
     new=['# 0.4 standard nozzle, values copied from 0.4HF','  - condition: tool.nozzle_diameter == 0.4 and not tool.nozzle_high_flow','    id: std04-root','    values:','      max_print_speed: 300','    variants:']
@@ -201,6 +204,9 @@ def printer_file(t):
         if x=='{if first_layer_bed_temperature[initial_tool] <= 60}M106 S70{endif}': cold.append(l.replace(x,'M106 S70')); continue
         cold.append(l)
     assert bed==2 and len(body)-len(cold)==4,(bed,len(body)-len(cold))
+    # cold plate (GECO) is for PLA only: a non-PLA filament on a used tool adds a deliberate printer-model mismatch, so the printer warns or refuses
+    j=next(q for q,l in enumerate(cold) if l.strip()=='{if is_extruder_used[7]}{used_tools = used_tools + 1}{endif}'); pad=cold[j][:len(cold[j])-len(cold[j].lstrip())]
+    cold[j+1:j+1]=[pad+x for x in ['','; GECO cold plate: PLA only','{global geco_bad = 0}']+['{if is_extruder_used[%d] and filament_type[%d] != "PLA"}{geco_bad = geco_bad + 1}{endif}'%(i,i) for i in range(8)]+['{if geco_bad > 0}','M117 GECO: PLA only!','M862.3 P "GECO-PLA-ONLY" ; deliberate printer model mismatch: the printer warns/stops when a non-PLA filament is sliced for the cold plate','{endif}']]
     i=find(ls,r"^- '\*default_print_C1_indx\*'",find(ls,r'^kind: printer',1)); ls[i+1:i+1]=["- '*start_by_sheet*'"]
     # Wiper tool-change G-code (with the TPU/FLEX hotter clean + soak) from the user's PS3 printer preset
     if WIPER:
@@ -234,6 +240,8 @@ for f,t in txt.items():
         if l.startswith('kind:'): kind=l.split(':',1)[1].strip()
         if l.strip()=='---': kind=None
         if 'base_model' in l: l=l.replace('COREONE_INDX',NB)
+        # Prusa FFF 1.0.24 limits some filaments to the 0.4 nozzle on the INDX; keep them available for the 1.0 HF nozzle (T8), which has its own user presets
+        l=l.replace('(printer.base_model != "%s" or tool.nozzle_diameter == 0.4)'%NB,'(printer.base_model != "%s" or tool.nozzle_diameter == 0.4 or tool.nozzle_diameter == 1)'%NB)
         m=IDRE.match(l)
         if m: l=m.group(1)+nid(unq(m.group(2)))
         if re.match(r'^\s*(unconditional_)?inherits:\s*$',l): inh=True; res.append(l); continue
@@ -262,7 +270,9 @@ head+='printer_families:\n- label: CORE One INDX Mixed\n  base_model: %s\n  prin
 pd=next(d for d in docs if re.search(r'(?m)^kind: printer\s*$',d) and re.search(r'(?m)^id: COREONE_INDX\s*$',d))
 pd=pd.replace('name: Prusa CORE One INDX','name: CORE One INDX Mixed').replace('id: COREONE_INDX','id: '+NB).replace('base_model: COREONE_INDX','base_model: '+NB)
 for k in ['supports_non_high_flow_nozzle','supports_025_nozzle']:
-    a='  %s:\n    default: false'%k; assert pd.count(a)==1,k; pd=pd.replace(a,'  %s:\n    default: true'%k)
+    a='  %s:\n    default: false'%k
+    if pd.count(a)==0: assert pd.count('  %s:\n    default: true'%k)==1,k; continue   # already on in Prusa FFF >= 1.0.24
+    assert pd.count(a)==1,k; pd=pd.replace(a,'  %s:\n    default: true'%k)
 def tool(i,n,d,hf): return '\nkind: tool\ntechnology: FFF\nid: %s\nname: %s\ncondition: printer.base_model == "%s"\nfeatures:\n%s  nozzle_diameter:\n    default: %s\n'%(i,n,NB,'  nozzle_high_flow:\n    default: true\n' if hf else '',d)
 parts=[head,pd.rstrip('\n')+'\n',tool('indxmix-04hf','0.4 HF','0.4',1),tool('indxmix-04',"'0.4'",'0.4',0),tool('indxmix-025',"'0.25'",'0.25',0),tool('indxmix-10hf','1.0 HF','1.0',1),
  '\nkind: sheet\nname: Satin\nid: indxmix-satin\ntype: satin\n','\nkind: sheet\nname: PEI Smooth\nid: indxmix-pei-smooth\ntype: pei_smooth\n','\nkind: sheet\nname: PEI Textured\nid: indxmix-pei-textured\ntype: pei_textured\n',

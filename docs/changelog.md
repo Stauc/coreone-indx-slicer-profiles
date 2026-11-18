@@ -2,6 +2,19 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11-18 - Prusa FFF 1.0.24 / PS2 2.5.16 ported, "+ Wiper" dropped from the names
+
+* **PrusaSlicer 3 bundle 1.0.13**, regenerated from Prusa FFF 1.0.24: Prusa's own 0.25 nozzle presets (0.07 / 0.10 / 0.15 mm) and 0.25 / 0.6 / 0.8 filament values, the new 0.30mm Coarse for 0.4 (HF and standard; replaces the 0.30 "Match"), Prusa's new speeds/accelerations for the INDX 0.4 HF presets, PLA min fan 85 -> 100 % on the INDX. Generic PA is split into PA6/PA66/PA612/PA11/PA12. Prusa 1.0.24 limits some filaments (Prusament ASA, PC Blend, PETG CF, TPU 95A, Generic ABS/ASA/PC/FLEX/PVA/BVOH, Woodfill, rPLA) to the 0.4 nozzle on the INDX; the bundle also keeps them on the 1.0 HF nozzle (T8), where the user presets live. All 53 PS3 user presets still resolve.
+* **Tool change (PS2, PS3, Orca):** Prusa's per-nozzle flush on the purge station (0.25 / 0.6 / 0.8) and the start G-code without the unrecovered `+ 0.04` retract (cf. prusa3d/PrusaSlicer-settings-prusa-fff#49). Kept: TPU/FLEX hotter clean + 8 s soak, priming heats the nozzles (#53).
+* **Removed the extra `G12 S2` quick clean** from the PS3 tool change (Prusa does not have it; it is the fast wipe that threw filament bits on the plate). In PS2 it was already commented out.
+* **Renamed printers** (nothing in them is wiper-specific): PS2 `HF0.4 nozzle + Wiper` -> `HF0.4 nozzle (custom)` (the plain name is a Prusa system preset), `HF0.4 nozzle + Wiper + GECO` -> `HF0.4 nozzle + GECO`, `Mixed Nozzles + Wiper` -> `Mixed Nozzles`, `Mixed Nozzles + Wiper + GECO` -> `Mixed Nozzles + GECO`; PS3 `Prusa CORE One INDX + Wiper` -> `Prusa CORE One INDX 8T (custom)`. The old one-off scripts in `scripts/` still use the old names.
+* **PS2 T7 (0.25):** retract 0.8 -> 0.7 mm (Prusa's 0.25 value); 0.07 / 0.10 mm presets take Prusa's speeds and accelerations (0.07: outer 80, perimeters 120, small 80 mm/s); new `0.15mm Detail @COREONEINDX 0.25 - T7`.
+* **PS2 GECO printers are PLA-only for our filaments:** the two `+ GECO` printers carry the keyword `GECO_COLD_PLATE` in `printer_notes`, and the 25 non-PLA user filaments (PETG, ASA, PA/PC/PP CF, TPU) add `and printer_notes!~/.*GECO_COLD_PLATE.*/`. Prusa's own system filaments cannot be hidden per printer without editing the vendor file.
+* **PS2 GECO start G-code check:** if any used tool has a non-PLA filament, the start G-code adds `M117 GECO: PLA only!` and `M862.3 P "GECO-PLA-ONLY"` (a deliberate printer-model mismatch), so the printer warns, or refuses with the model check set to strict. Not yet tested on the printer.
+* **PrusaSlicer 3 bundle 1.0.14:** the *GECO (cold)* sheet gets the same PLA-only check in its start G-code.
+* **`install.ps1`** (repository root): copies the profiles into the PrusaSlicer 2.x / PrusaSlicer 3 / OrcaSlicer data folders with a backup; README *Install* rewritten. Not yet run on a clean machine.
+* New filaments (2026-11-18): GeeeTech PLA Water Blue and GeeeTech PLA Black Carbon Fiber for HF0.4, PS2 and PS3.
+
 ## 2026-11-17 - Priming heats the nozzles
 
 * **Fix: "Prime all printing extruders" primed cold.** Prusa's INDX `toolchange_gcode` heats a nozzle only when `layer_num >= 0`; during priming (`layer_num < 0`) it only picked the tool (`T2 S1 L0 D0`), with no `M104`/`M109`. T2-T5 and T0 were primed cold and T0 stayed at the `M104 S120` of the Z homing, so the print started at 120 C. The `else` branch now sets and waits for `first_layer_temperature` of the nozzle (`M104` + `M109`). Patched in the four PrusaSlicer 2.x INDX printer presets, the PrusaSlicer 3 user printer preset "Prusa CORE One INDX + Wiper" and the PrusaSlicer 3 mixed-nozzle bundle (1.0.12 zip). Confirmed on the printer: every nozzle heats and primes correctly. Reported to Prusa: https://github.com/prusa3d/PrusaSlicer-settings-prusa-fff/issues/53

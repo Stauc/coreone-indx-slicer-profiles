@@ -1,8 +1,8 @@
 kind: filament
-id: 06047e07-fa29-4e01-a8d2-c9a588cd8a3f
+id: f2e8c3eb-2e46-4bbf-bc4e-516331fa070b
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and not tool.nozzle_high_flow)
-  id: DqWth9MnUpk08Z2RHtmMGg
+  id: eB3ZxRomWbkmvGbyhh44yA
   name: "Sunlu PLA White @INDXMIX Std0.4 - T6"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

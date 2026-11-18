@@ -1,8 +1,8 @@
 kind: filament
-id: 5c08b728-0404-40fe-9ab1-f31a5d639a0f
+id: 49d82eb5-48d9-4aa3-80e5-80a023814233
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: dkKjZ6nRMfJFYcROb8m7WQ
+  id: CaWwfS3IrpPbK/s4dPWbiQ
   name: "Prusament PLA ColorMix Gold Glitter @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

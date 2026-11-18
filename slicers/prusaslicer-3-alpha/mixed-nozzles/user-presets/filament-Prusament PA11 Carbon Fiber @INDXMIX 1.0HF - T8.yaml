@@ -1,8 +1,8 @@
 kind: filament
-id: e26975c6-753e-4389-9a4b-16852e3b4cb9
+id: 1ff13f73-2c4b-4332-88d4-f3bf610b2e5e
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
-  id: z37LmUPvTKZh8pea6WiQ3w
+  id: 99M5aCUXUXuMXBhvXBEWnA
   name: "Prusament PA11 Carbon Fiber @INDXMIX 1.0HF - T8"
   unconditional_inherits:
   - SXM_FF36F1936C4E41D75F54

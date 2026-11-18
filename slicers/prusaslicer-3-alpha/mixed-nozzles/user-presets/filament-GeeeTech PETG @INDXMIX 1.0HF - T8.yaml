@@ -1,8 +1,8 @@
 kind: filament
-id: adf12db1-521d-4098-950a-a58b7f9c4c87
+id: 4ad8a754-8864-4d0f-a85b-5aeb9a8ac796
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
-  id: QbNBhG7F/4/Jx8izF6UwkA
+  id: oUxZS6lwBPOoRV3rNvH4ag
   name: "GeeeTech PETG @INDXMIX 1.0HF - T8"
   unconditional_inherits:
   - SXM_72AAB98F7F16AB008317

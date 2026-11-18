@@ -1,8 +1,8 @@
 kind: filament
-id: 4c0f47ca-48ed-4823-84df-04eef67cf21b
+id: 1600a238-8b4c-4f96-bba4-0955f7de0a96
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: r1cucZo4s57YfKOdjcGLmA
+  id: 3dYUaWsuou7SuWi9EfUWTA
   name: "Sunlu PLA+ 2.0 @INDXMIX HF0.4 - FLATTENED"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

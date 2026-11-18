@@ -1,8 +1,8 @@
 kind: filament
-id: 4ab4357d-dc0b-4468-b19c-b2641bb6de8f
+id: 85f2e544-a36f-4484-a2f8-08d7d84ab7b4
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: sQ7Xn/ERcH0ISxs8zLYY1A
+  id: eV4aItkAL/4XnBsSrHkHTw
   name: "Prusament PLA Galaxy Purple @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

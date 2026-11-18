@@ -1,8 +1,8 @@
 kind: filament
-id: d66db109-5ebd-4050-bd13-1b79d85adac6
+id: c19bab80-5e92-41e3-ab48-4d0fcdebbdb7
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: q8VXVlt2z4mLlNsRvGpOdg
+  id: hDg+q1pw7nXdFgGcR9Htog
   name: "Prusament PETG @INDXMIX HF0.4 - ICE Rob"
   unconditional_inherits:
   - SXM_72AAB98F7F16AB008317

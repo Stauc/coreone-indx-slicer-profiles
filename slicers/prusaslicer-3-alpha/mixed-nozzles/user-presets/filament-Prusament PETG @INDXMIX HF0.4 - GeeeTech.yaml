@@ -1,8 +1,8 @@
 kind: filament
-id: 01d4ff40-ae1a-4b40-9ac5-06d239e5201b
+id: cf2c4549-d8f1-4c27-bf67-13da1673bd98
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: wdGJRr6msmlFPtRUkcQ5Hg
+  id: 1MieqmDNJr4dzgjilFhKqA
   name: "Prusament PETG @INDXMIX HF0.4 - GeeeTech"
   unconditional_inherits:
   - SXM_72AAB98F7F16AB008317

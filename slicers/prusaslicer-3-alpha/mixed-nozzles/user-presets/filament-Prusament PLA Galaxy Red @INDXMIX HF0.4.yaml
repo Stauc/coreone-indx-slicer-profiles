@@ -1,8 +1,8 @@
 kind: filament
-id: 0e0a10bc-63fe-4256-aab7-675d8940941b
+id: 2d5b3a58-988e-49f9-8bf6-d5860ea61c2b
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: CO7Z6qA0aK7yrq1yFuc7lQ
+  id: ydUZbf0ioEF/1wlsk/xD8g
   name: "Prusament PLA Galaxy Red @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

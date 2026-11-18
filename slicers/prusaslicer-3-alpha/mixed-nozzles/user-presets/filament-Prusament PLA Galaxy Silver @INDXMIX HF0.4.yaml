@@ -1,8 +1,8 @@
 kind: filament
-id: 7c63d62d-9934-420a-85bf-f26bec9ca7e9
+id: c898ef93-5435-43b9-905f-54278e011070
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: a4jXdaPvbYHfqu9qGktg7w
+  id: UeQmsBy81CajwtKYs2jOzA
   name: "Prusament PLA Galaxy Silver @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

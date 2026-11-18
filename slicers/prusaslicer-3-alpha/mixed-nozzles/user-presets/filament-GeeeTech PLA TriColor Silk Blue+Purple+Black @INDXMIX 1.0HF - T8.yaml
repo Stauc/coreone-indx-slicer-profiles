@@ -1,8 +1,8 @@
 kind: filament
-id: 0f178fdb-2ce0-4e8e-a912-12d5963a0d8d
+id: 872bf0c0-224c-4b10-9e56-97f47ddfd68e
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
-  id: GZTSk1Lig5MiAVfbOpgR7Q
+  id: o+l0n9wswcKsy2apDyHMkw
   name: "GeeeTech PLA TriColor Silk Blue+Purple+Black @INDXMIX 1.0HF - T8"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

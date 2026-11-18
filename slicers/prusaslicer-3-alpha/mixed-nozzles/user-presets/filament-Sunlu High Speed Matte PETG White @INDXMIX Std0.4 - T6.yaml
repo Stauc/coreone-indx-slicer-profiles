@@ -1,8 +1,8 @@
 kind: filament
-id: 737f78e7-02ed-4cf3-8279-409dcb42ff8f
+id: 4fb7f943-dbd5-442c-bdf8-5fb36e7a0762
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and not tool.nozzle_high_flow)
-  id: +s1OhWJ8PkD0qrHoOUwxEg
+  id: cdy90pS20SpiiiDfYgtJUw
   name: "Sunlu High Speed Matte PETG White @INDXMIX Std0.4 - T6"
   unconditional_inherits:
   - SXM_72AAB98F7F16AB008317

@@ -1,8 +1,8 @@
 kind: filament
-id: 6f462f06-b128-44f3-9e26-c192c9e395cf
+id: 6c11515b-f2c0-4759-acbf-057992b6f080
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: 59LvvncO/vsbVZX8nWkkfw
+  id: 4XOfnxjH/jNuFVccdu0Clw
   name: "Prusament PLA ColorMix Magenta @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

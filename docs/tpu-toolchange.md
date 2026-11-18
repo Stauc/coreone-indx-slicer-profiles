@@ -36,7 +36,7 @@ Both edits carry a comment that names the source. Other filaments are not affect
 | Slicer | Where | Notes |
 |---|---|---|
 | PrusaSlicer 2.x | `start_gcode` and `toolchange_gcode` of the four printer `.ini` presets | [`scripts/apply_flex_toolchange.py`](../scripts/apply_flex_toolchange.py) |
-| PrusaSlicer 3 alpha | `toolchange_gcode` of `printer-Prusa CORE One INDX + Wiper.yaml` | the start G-code is inherited from the vendor bundle and is **not** overridden, so the first-tool sequence at the start of a print stays stock |
+| PrusaSlicer 3 alpha | `toolchange_gcode` of `printer-Prusa CORE One INDX 8T (custom).yaml` | the start G-code is inherited from the vendor bundle and is **not** overridden, so the first-tool sequence at the start of a print stays stock |
 | OrcaSlicer | `change_filament_gcode` and `machine_start_gcode` of the four INDX machine presets | the system G-code was copied out of Orca's `Prusa` profile bundle (stamped 2.4.0.18), patched and stored as an override; filament type `TPU` |
 
 Scripts: [`apply_flex_toolchange.py`](../scripts/apply_flex_toolchange.py) (2.x) and

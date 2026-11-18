@@ -1,8 +1,8 @@
 kind: filament
-id: 926365b3-380a-4de1-8606-065ff581c908
+id: dee1cae2-9430-4edb-b393-5dcceb820095
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: PmaKfwcZiQwmrbYCOlNmjA
+  id: IWc7/vocUSLGmT4Z5YibRw
   name: "Fiberlogy ASA @INDXMIX HF0.4 - Matte Olive Green"
   unconditional_inherits:
   - SXM_4E15B9756D32E01D7DC1

@@ -1,8 +1,8 @@
 kind: filament
-id: f713c64d-eeab-4cc9-8d2f-9e4286a6bc9d
+id: ee11eb14-e9a0-41ac-b6f6-08f61ff4aa0c
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: w5wjAJ5NzIAAmGVnoM6Ikw
+  id: O0BaXDYgIgXt1pqbUGv9gQ
   name: "GeeeTech PETG Transparent @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_72AAB98F7F16AB008317

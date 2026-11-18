@@ -18,7 +18,7 @@ used to generate and verify them.
 | T7 | 0.25 mm | fine detail |
 | T8 | 1.0 mm high-flow | big prints, normal and vase mode |
 
-Printer variants: *Mixed Nozzles + Wiper*, *+ GECO* (cold-plate variant, PLA only), *HF 0.4 nozzle + Wiper* (all tools 0.4 HF).
+Printer variants: *Mixed Nozzles*, *+ GECO* (cold-plate variant, PLA only), *HF0.4 nozzle (custom)* (all tools 0.4 HF). The "+ Wiper" suffix was dropped on 2026-11-18: the presets have nothing wiper-specific.
 Details and the compatibility conditions are in [docs/hardware-and-nozzle-layout.md](docs/hardware-and-nozzle-layout.md).
 
 ## Layout
@@ -46,16 +46,29 @@ scripts/                  Python used to build/audit the profiles (paths assume 
 
 ## Install
 
-Close the slicer first, copy the files, start it again. Existing files with the same name are overwritten, so back up first.
+Windows, with the slicer closed. Download the repository (*Code > Download ZIP*), unpack it, open PowerShell in that folder and run one of:
 
-* **PrusaSlicer 2.x** - copy `filament`, `print`, `printer` `.ini` files into the same-named folders of your PrusaSlicer data directory
-  (`%APPDATA%\PrusaSlicer` on Windows). Needs the official *Prusa CORE One INDX* printer profile installed (`inherits` points to it).
-* **PrusaSlicer 3.0 alpha** - copy the `.yaml` files into `<PS3 data dir>/presets/user/prusa-research-fff/PrusaResearch/`.
-  Parent preset ids were taken from alpha 13/14 and may change in later builds ([docs/prusaslicer-3-alpha.md](docs/prusaslicer-3-alpha.md)).
-* **OrcaSlicer** - copy `filament`, `process`, `machine` `.json` files into `%APPDATA%\OrcaSlicer\user\default\<folder>\`.
-  The `machine` presets have their host, user, password, API key and Prusa Connect id **blanked**: either fill them in again or skip those files.
-  Orca ties filaments to machines by *name*, so the compatible-printer lists name the author's four machines
-  (`HF 0.4 nozzle` / `Mixed Nozzles`, each `- LAN` / `- Connect`); edit them if your machine names differ.
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -PS3          # PrusaSlicer 3 alpha
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -PS2          # PrusaSlicer 2.x
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -Orca         # OrcaSlicer filaments + processes (add -OrcaMachines for the printers)
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -All
+```
+
+The script copies the files into the slicer data folders and backs up any file it overwrites (`_backup_install_<date>` in the same folder).
+
+* **PrusaSlicer 3 alpha** (the author's main slicer). After the script, in PrusaSlicer 3: *Configuration > Preset Sources and Updates > Add Zip*,
+  pick `slicers/prusaslicer-3-alpha/mixed-nozzles/stauc-indx-mixed_offline_<version>.zip`, enable the source, add the printer **CORE One INDX Mixed 8T**
+  and set the nozzle of each tool (0.4 HF / 0.4 / 0.25 / 1.0 HF). For a cold plate pick the sheet *GECO (cold)*. Details: [docs/prusaslicer-3-mixed-nozzles.md](docs/prusaslicer-3-mixed-nozzles.md).
+  The script also copies the user presets for these tools and the printer `Prusa CORE One INDX 8T (custom)` for Prusa's own INDX printer.
+  The data folder is looked up as `%APPDATA%\PrusaSlicer3-dev`, `PrusaSlicer3` or `PrusaSlicer-3`; otherwise pass `-PS3DataDir "<folder>"`.
+* **PrusaSlicer 2.x** - needs Prusa's *CORE One INDX* printer installed once through the Configuration Wizard (the profiles inherit from it).
+  Then pick one of the printers `Prusa CORE One INDX 8T Mixed Nozzles`, `... Mixed Nozzles + GECO`, `... HF0.4 nozzle (custom)`, `... HF0.4 nozzle + GECO`.
+* **OrcaSlicer** - copied into `%APPDATA%\OrcaSlicer\user\default\` (`-OrcaUser <name>` for another user folder). The machine presets have their host,
+  API key and Prusa Connect id **blanked**: fill them in again. Orca ties filaments to machines by *name*, so the compatible-printer lists name the author's four
+  machines (`HF 0.4 nozzle` / `Mixed Nozzles`, each `- LAN` / `- Connect`); edit them if your machine names differ.
+
+Manual install: copy the files of `slicers/<slicer>/...` into the same-named folders of the slicer data directory.
 
 ## Documents
 

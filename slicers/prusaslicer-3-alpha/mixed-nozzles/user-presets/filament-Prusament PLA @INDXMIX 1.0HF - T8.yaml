@@ -1,8 +1,8 @@
 kind: filament
-id: 97628cc9-d59b-4db7-b743-a2f2458f6c39
+id: cae922b5-53c7-447a-81aa-9c87d15cc692
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 1) and tool.nozzle_high_flow)
-  id: LgRDjp9TxCsikvEAq+V+qg
+  id: NqlLXx0yOWJCcyhodShcyg
   name: "Prusament PLA @INDXMIX 1.0HF - T8"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

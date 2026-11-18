@@ -1,8 +1,8 @@
 kind: filament
-id: 94a9e71f-97f7-4698-a7f2-a916696df234
+id: da38f4d5-5a7c-4096-88a6-01d9fce68a80
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: 98OMsDSDHL76oJhSGuo9Yg
+  id: wvLBKP/WDlpOP2hLxAJOcw
   name: "GeeeTech PLA Matte Grey @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

@@ -1,8 +1,8 @@
 kind: filament
-id: cf75fc4a-3ca9-4ab9-86db-cb0198db24e4
+id: 9a7f16d0-d1f8-4a65-9154-49e553b66334
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: /et5xD3I9c6DwvtI+A1pRQ
+  id: zmI32+fE2EQtdNDkzMpgag
   name: "Ultrafuse TPU-95A @INDXMIX HF0.4 - 1.06 flow"
   unconditional_inherits:
   - SXM_2135CF01B64A96ECCA2B

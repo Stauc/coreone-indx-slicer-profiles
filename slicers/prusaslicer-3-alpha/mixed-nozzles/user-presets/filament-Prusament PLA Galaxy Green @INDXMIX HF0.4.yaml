@@ -1,8 +1,8 @@
 kind: filament
-id: d3fed870-d196-421c-8790-a128a06a3f29
+id: 7d07bd5d-5b6d-4fe7-8b0b-f9386bdfcead
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: breomt7ZfbpgatrH7zVajQ
+  id: 0HcyVFG6soYXnv/vAQ8Lqg
   name: "Prusament PLA Galaxy Green @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08

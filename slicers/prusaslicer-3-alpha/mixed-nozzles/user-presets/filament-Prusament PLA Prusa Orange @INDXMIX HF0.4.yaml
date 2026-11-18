@@ -1,8 +1,8 @@
 kind: filament
-id: 57d9617f-40f5-4686-aab4-79ca90c3f58e
+id: 8450200f-27aa-4e71-8a4e-a5d64d16c98f
 variants:
 - condition: ((printer.base_model == "INDX_MIXED") and (tool.nozzle_diameter == 0.4) and tool.nozzle_high_flow)
-  id: ymXfBteOcOG+ZbyKvV37BQ
+  id: XifxvE43MkLPcpnwSUZP3A
   name: "Prusament PLA Prusa Orange @INDXMIX HF0.4"
   unconditional_inherits:
   - SXM_B1C07163B719D4313E08
