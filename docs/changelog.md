@@ -2,6 +2,10 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11-17 - Priming heats the nozzles
+
+* **Fix: "Prime all printing extruders" primed cold.** Prusa's INDX `toolchange_gcode` heats a nozzle only when `layer_num >= 0`; during priming (`layer_num < 0`) it only picked the tool (`T2 S1 L0 D0`), with no `M104`/`M109`. T2-T5 and T0 were primed cold and T0 stayed at the `M104 S120` of the Z homing, so the print started at 120 C. The `else` branch now sets and waits for `first_layer_temperature` of the nozzle (`M104` + `M109`). Patched in the four PrusaSlicer 2.x INDX printer presets, the PrusaSlicer 3 user printer preset "Prusa CORE One INDX + Wiper" and the PrusaSlicer 3 mixed-nozzle bundle (1.0.12 zip). Confirmed on the printer: every nozzle heats and primes correctly. Reported to Prusa: https://github.com/prusa3d/PrusaSlicer-settings-prusa-fff/issues/53
+
 ## 2026-11-16 - Sunlu White, Prusament PETG/ASA for 1.0 HF, normal 1.0 HF prints
 
 * **Sunlu High Speed Matte PETG White** for T6 (standard 0.4; cap 11 mm3/s, PA 0.050 estimated from the GeeeTech Std/HF step) and for T8 (copy of the T8 tune, colour #FFFFFF), in PrusaSlicer 2.x, OrcaSlicer and as PrusaSlicer 3 user presets.
