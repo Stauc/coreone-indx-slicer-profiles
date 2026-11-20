@@ -4,7 +4,7 @@ generated from the installed Prusa profiles. Idea: ltlowe's "Multi-Size Core One
 import io,os,re,sys,json,hashlib,shutil,zipfile,yaml
 SRC,OUT,ZIP=sys.argv[1],sys.argv[2],sys.argv[3]
 WIPER=sys.argv[4] if len(sys.argv)>4 else None
-NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.14'; SUF='@INDXMIX'
+NB='INDX_MIXED'; VID='StaucINDXMixed'; REPO='stauc-indx-mixed'; VER='1.0.15'; SUF='@INDXMIX'
 def rd(f): return io.open(os.path.join(SRC,f),encoding='utf-8',newline='').read().replace('\r\n','\n')
 def nid(s): return 'SXM_'+hashlib.sha1(s.encode()).hexdigest()[:20].upper()
 def unq(s):
@@ -178,7 +178,7 @@ def tool_file(t):
     custom(i,'hf04','0.4HF','0.15mm Detail ColorMix','0.15','0.15',{'fill_pattern':'gyroid','fill_density':'10%','top_solid_layers':'6','bottom_solid_layers':'5'})
     # per-nozzle limits for 1.0
     d=find(ls,r'^  - condition: tool\.nozzle_diameter == 0\.8'); e=block_end(ls,d)
-    ls[e:e]=['  - condition: tool.nozzle_diameter == 1','    id: tc-hf10','    values:','      deretract_speed: 15','      max_layer_height: 0.7','      min_layer_height: 0.2','      retract_before_wipe: 50%','      retract_length: 0.6','      retract_lift: 0.25','      retract_speed: 25','      wipe: 1']
+    ls[e:e]=['  - condition: tool.nozzle_diameter == 1','    id: tc-hf10','    values:','      deretract_speed: 15','      max_layer_height: 0.7','      min_layer_height: 0.2','      retract_before_wipe: 50%','      retract_length: 0.7','      retract_lift: 0.25','      retract_speed: 25','      wipe: 1']
     return '\n'.join(ls)
 def printer_file(t):
     ls=t.split('\n'); d=find(ls,r'^- condition: tool\.nozzle_diameter == 0\.8'); e=block_end(ls,d)

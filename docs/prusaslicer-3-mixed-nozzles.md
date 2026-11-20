@@ -8,14 +8,14 @@ The idea of a separate printer family with its own tools comes from ltlowe's
 (Prusa forum, 2 Nov 2026). No files from that bundle are used; everything here is generated from Prusa's installed profiles by
 [`scripts/build_ps3_mixed_vendor.py`](../scripts/build_ps3_mixed_vendor.py).
 
-> Status: archive 1.0.14, built on PrusaSlicer 3.0.0-alpha14 from Prusa FFF profiles 1.0.24. Slicing and upload to Prusa Connect work (checked with 1.0.12). Only a TPU part on
+> Status: archive 1.0.15, built on PrusaSlicer 3.0.0-alpha14 from Prusa FFF profiles 1.0.25. Slicing and upload to Prusa Connect work (checked with 1.0.12). Only a TPU part on
 > T6 has been printed. PrusaSlicer 3 is an alpha and its preset format changes between builds.
 
 ## Files
 
 | File | What it is |
 |---|---|
-| `slicers/prusaslicer-3-alpha/mixed-nozzles/stauc-indx-mixed_offline_1.0.14.zip` | the preset source (offline archive) |
+| `slicers/prusaslicer-3-alpha/mixed-nozzles/stauc-indx-mixed_offline_1.0.15.zip` | the preset source (offline archive) |
 | `slicers/prusaslicer-3-alpha/mixed-nozzles/user-presets/` | the author's filaments for it, one per nozzle type |
 | `scripts/build_ps3_mixed_vendor.py` | builds the archive from an installed `PrusaResearch` preset folder |
 | `scripts/port_ps3_mixed_user_presets.py` | converts PrusaSlicer 2.x INDX filament `.ini` files into user presets for it |
@@ -55,7 +55,7 @@ layer-height node; siblings with the same condition are first-match only.
 
 ## Limits
 
-* It is a snapshot of Prusa's 1.0.24 profiles and does not follow Prusa's updates; rebuild it with the script.
+* It is a snapshot of Prusa's 1.0.25 profiles and does not follow Prusa's updates; rebuild it with the script.
 * All preset ids differ from Prusa's, so user presets made for the official INDX printer do not show up here.
 * Editing Prusa's installed profiles in place does not work: the files stay but the tools remain locked, and a profile update overwrites them.
 * Whether the cold-sheet start G-code really keeps the bed off has not been checked on a print.

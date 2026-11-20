@@ -2,6 +2,11 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11-20 - Prusa FFF 1.0.25, 1.0 HF retract 0.7 mm
+
+* **PrusaSlicer 3 bundle 1.0.15**, regenerated from Prusa FFF 1.0.25. For the INDX: retract speed 45 -> 40 mm/s on all Prusa nozzles, 0.6 nozzle `retract_before_wipe` 0 -> 80 %, 0.8 nozzle retract 0.6 -> 0.7 mm, wipe tower spacing 120 -> 125 %, minimum layer time PLA 0.4 8 -> 9 s, PET 0.4 9 s and 0.25 5 s (new), FLEX 0.4 20 -> 15 s. Print common: `standby_temperature_delta` -110 -> -5 (only with ooze prevention, which is off). The rest of 1.0.25 is MMU, MK4/MK3.9, XL and third-party filament fixes.
+* **1.0 HF nozzle (T8): printer retract 0.6 -> 0.7 mm**, following Prusa's 0.8 nozzle in 1.0.25 (our 1.0 values are the 0.8 ones). PS3 bundle and the two PS2 Mixed printers. Most T8 filaments set their own retract length (PETG 1.6, PLA / ASA 0.8), so it only applies to those that do not (PA11 CF, PC Blend CF, PP CF, Sunlu PLA). An estimate, not printed yet.
+
 ## 2026-11-18 - Prusa FFF 1.0.24 / PS2 2.5.16 ported, "+ Wiper" dropped from the names
 
 * **PrusaSlicer 3 bundle 1.0.13**, regenerated from Prusa FFF 1.0.24: Prusa's own 0.25 nozzle presets (0.07 / 0.10 / 0.15 mm) and 0.25 / 0.6 / 0.8 filament values, the new 0.30mm Coarse for 0.4 (HF and standard; replaces the 0.30 "Match"), Prusa's new speeds/accelerations for the INDX 0.4 HF presets, PLA min fan 85 -> 100 % on the INDX. Generic PA is split into PA6/PA66/PA612/PA11/PA12. Prusa 1.0.24 limits some filaments (Prusament ASA, PC Blend, PETG CF, TPU 95A, Generic ABS/ASA/PC/FLEX/PVA/BVOH, Woodfill, rPLA) to the 0.4 nozzle on the INDX; the bundle also keeps them on the 1.0 HF nozzle (T8), where the user presets live. All 53 PS3 user presets still resolve.
