@@ -2,6 +2,10 @@
 
 Newest first. Dates are the working dates of the session in which each change was made.
 
+## 2026-11-22 - PLA bed 60 C
+
+* **All PLA profiles: bed 60 C** (first layer and other layers). Was 55 C on the GeeeTech PLAs (Matte Grey, TriColor Silk, Water Blue, Black CF) and 50 C on the Prusament PLA ColorMix / Galaxy / Orange profiles; PS2, PS3 and Orca. The Prusament and Sunlu PLA profiles were already at 60 C; the GECO profiles stay at 0 (cold plate).
+
 ## 2026-11-20 - Prusa FFF 1.0.25, 1.0 HF retract 0.7 mm
 
 * **PrusaSlicer 3 bundle 1.0.15**, regenerated from Prusa FFF 1.0.25. For the INDX: retract speed 45 -> 40 mm/s on all Prusa nozzles, 0.6 nozzle `retract_before_wipe` 0 -> 80 %, 0.8 nozzle retract 0.6 -> 0.7 mm, wipe tower spacing 120 -> 125 %, minimum layer time PLA 0.4 8 -> 9 s, PET 0.4 9 s and 0.25 5 s (new), FLEX 0.4 20 -> 15 s. Print common: `standby_temperature_delta` -110 -> -5 (only with ooze prevention, which is off). The rest of 1.0.25 is MMU, MK4/MK3.9, XL and third-party filament fixes.

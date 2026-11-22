@@ -32,10 +32,10 @@
     ],
     "from": "User",
     "hot_plate_temp": [
-        "55"
+        "60"
     ],
     "hot_plate_temp_initial_layer": [
-        "55"
+        "60"
     ],
     "inherits": "Generic PLA Silk @Prusa CORE One INDX",
     "is_custom_defined": "0",
@@ -56,10 +56,10 @@
         "0.009"
     ],
     "textured_plate_temp": [
-        "55"
+        "60"
     ],
     "textured_plate_temp_initial_layer": [
-        "55"
+        "60"
     ],
     "version": "2.3.1.0"
 }
