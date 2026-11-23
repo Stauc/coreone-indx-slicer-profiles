@@ -6,6 +6,10 @@ Newest first. Dates are the working dates of the session in which each change wa
 
 * **All PLA profiles: bed 60 C** (first layer and other layers). Was 55 C on the GeeeTech PLAs (Matte Grey, TriColor Silk, Water Blue, Black CF) and 50 C on the Prusament PLA ColorMix / Galaxy / Orange profiles; PS2, PS3 and Orca. The Prusament and Sunlu PLA profiles were already at 60 C; the GECO profiles stay at 0 (cold plate).
 
+* **Prusament PLA Marble Grey @ HF0.4** (PS2, PS3, Orca): Prusament PLA with extrusion multiplier / flow ratio 0.99, from an OrcaSlicer flow test Pass 2 at 0.25 mm layers (-1 % smoothest, -3 % and below with gaps). The first-layer over-extrusion seen with 0.25mm Draft is a Z offset issue, not flow.
+
+* **Prusament PLA ColorMix (7), Galaxy (5) and Prusa Orange now inherit everything from Prusament PLA @ HF0.4**: 225 C / 230 C first layer instead of 215 / 215 (the middle of the OpenPrintTag 205-225 range), vendor Prusa Polymers. Only colour and the OpenPrintTag note are their own. PS3: the presets hold only those two values, so they follow bundle updates; PS2: the parent values are written into the files (PS2 user presets store every value) and `inherits` now points to Prusament PLA.
+
 ## 2026-11-20 - Prusa FFF 1.0.25, 1.0 HF retract 0.7 mm
 
 * **PrusaSlicer 3 bundle 1.0.15**, regenerated from Prusa FFF 1.0.25. For the INDX: retract speed 45 -> 40 mm/s on all Prusa nozzles, 0.6 nozzle `retract_before_wipe` 0 -> 80 %, 0.8 nozzle retract 0.6 -> 0.7 mm, wipe tower spacing 120 -> 125 %, minimum layer time PLA 0.4 8 -> 9 s, PET 0.4 9 s and 0.25 5 s (new), FLEX 0.4 20 -> 15 s. Print common: `standby_temperature_delta` -110 -> -5 (only with ooze prevention, which is off). The rest of 1.0.25 is MMU, MK4/MK3.9, XL and third-party filament fixes.
